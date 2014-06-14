@@ -14,9 +14,6 @@ require.config({
 
     quickview: "libs/quickview/quickview",
 
-    fullcalendar: "libs/fullcalendar/fullcalendar",
-    moment: "libs/fullcalendar/moment.min",
-    timepicker: "libs/timepicker/timepicker.min",
     highcharts: "libs/highcharts/highcharts.min",
     monthpicker: "libs/monthpicker/jquery.ui.monthpicker",
 

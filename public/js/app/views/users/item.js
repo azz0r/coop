@@ -51,14 +51,8 @@ define(["marionette", "text!app/templates/users/item.html", "app/views/users/for
 
         // set the model for alias
         this.model.set({
-          first_name: this.$el.find(".first_name").val(),
-          last_name: this.$el.find('.last_name').val(),
+          username: this.$el.find(".username").val(),
           email: this.$el.find('.email').val(),
-          personal_email: this.$el.find('.personal_email').val(),
-          personal_phone_number: this.$el.find('.personal_phone_number').val(),
-          work_phone_number: this.$el.find('.work_phone_number').val(),
-          personal_address: this.$el.find('.personal_address').val(),
-          work_address: this.$el.find('.work_address').val()
         });
         // save the model
         this.saveModel(this.model);

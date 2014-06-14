@@ -89,18 +89,8 @@ define(["marionette", "underscore", "text!app/templates/users/form.html", "app/m
     render: function () {
       var bindings, html
       bindings = {
-        first_name: "#first_name",
-        last_name: "#last_name",
-        birth_date: "#birth_date",
-        job_title: "#job_title",
-        job_start_date: "#job_start_date",
-        job_probation_ends: "#job_probation_ends",
+        username: "#username",
         email: "#email",
-        work_address: "#work_address",
-        work_phone_number: "#work_phone_number",
-        personal_email: "#personal_email",
-        personal_address: "#personal_address",
-        personal_phone_number: "#personal_phone_number",
         password: "#password",
         password_confirmation: "#password_confirmation"
       }

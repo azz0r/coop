@@ -1,28 +1,9 @@
 <script type="text/template" id="usersItemTemplate">
     <td>
-        <div><input type="text" value="<%=model.first_name%>" class="first_name" /></div>
-        <div><input type="text" value="<%=model.last_name%>" class="last_name" /></div>
-            <div>
-                <select class="role">
-                    <% _.each(roles, function(val, key) { %>
-                        <option value="<%=val.id%>"<% if (val.id == model.role) { %>selected="selected"<% } %>>
-                            <%=val.humanised%>
-                        </option>
-                    <% }) %>
-                </select>
-            </div>
+        <div><input type="text" value="<%=model.username%>" class="username" /></div>
     </td>
     <td>
-        <div><i class="fa fa-home fa-1" title="Personal"></i> <input type="text" value="<%=model.personal_email%>" class="personal_email" placeholder="Personal Email" /></div>
-        <div><i class="fa fa-building-o fa-1" title="Work"></i> <input type="text" value="<%=model.email%>" class="email" placeholder="Work Email" /></div>
-    </td>
-    <td>
-        <div><i class="fa fa-home fa-1" title="Personal"></i> <input type="text" value="<%=model.personal_phone_number%>" class="personal_phone_number" placeholder="Personal Phone Number" /></div>
-        <div><i class="fa fa-building-o fa-1" title="Work"></i> <input type="text" value="<%=model.work_phone_number%>" class="work_phone_number" placeholder="Work Phone Number" /></div>
-    </td>
-    <td>
-        <div><i class="fa fa-home fa-1" title="Personal"></i> <input type="text" value="<%=model.personal_address%>" class="personal_address" placeholder="Personal Address" /></div>
-        <div><i class="fa fa-building-o fa-1" title="Work"></i> <input type="text" value="<%=model.work_address%>" class="work_address" placeholder="Work Address" /></div>
+        <div><i class="fa fa-home fa-1" title="email"></i> <input type="text" value="<%=model.email%>" class="email" placeholder="Email" /></div>
     </td>
     <td>
         <div>

@@ -65,3 +65,68 @@
     opacity: 0;
   }
 }
+
+
+//spinner
+.spinner {
+  display: inline-block;
+  opacity: 0;
+  width: 0;
+
+  -webkit-transition: opacity 0.25s, width 0.25s;
+  -moz-transition: opacity 0.25s, width 0.25s;
+  -o-transition: opacity 0.25s, width 0.25s;
+  transition: opacity 0.25s, width 0.25s;
+}
+
+.has-spinner.active {
+  cursor:progress;
+}
+
+.has-spinner.active .spinner {
+  opacity: 1;
+  width: auto; /* This doesn't work, just fix for unkown width elements */
+}
+
+.has-spinner.btn-mini.active .spinner {
+  width: 10px;
+}
+
+.has-spinner.btn-small.active .spinner {
+  width: 13px;
+}
+
+.has-spinner.btn.active .spinner {
+  width: 16px;
+}
+
+.has-spinner.btn-large.active .spinner {
+  width: 19px;
+}
+@keyframes throbbler {
+  0% {    transform: rotate(0deg);  }
+  12.5% {    transform: rotate(0deg);  }
+  12.5% {    transform: rotate(45deg);  }
+  25% {    transform: rotate(45deg);  }
+  25% {    transform: rotate(90deg);  }
+  37.5% {    transform: rotate(90deg);  }
+  37.5% {    transform: rotate(135deg);  }
+  50% {    transform: rotate(135deg);  }
+  50% {    transform: rotate(180deg);  }
+  62.5% {    transform: rotate(180deg);  }
+  62.5% {    transform: rotate(225deg);  }
+  75% {    transform: rotate(225deg);  }
+  75% {    transform: rotate(270deg);  }
+  87.5% {    transform: rotate(270deg);  }
+  87.5% {    transform: rotate(315deg);  }
+  100% {    transform: rotate(315deg);  }
+}
+
+.icon-spin:before {
+  content: "\f055";
+  animation-duration: 1s;
+  animation-name: throbbler;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+//end spinner
