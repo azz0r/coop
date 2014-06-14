@@ -1,0 +1,49 @@
+.postPreviewContainer .twitter {
+  background: white;
+  padding: 15px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
+.postPreviewContainer .twitter .clientProfileImage {
+  float: left;
+  width: 60px;
+}
+.postPreviewContainer .twitter .clientProfileImage img {
+  border-radius: 5px;
+}
+.postPreviewContainer .twitter .postBodyContent {
+  margin-left: 65px;
+}
+.postPreviewContainer .twitter .postBodyContent .clientAlias {
+  color: black;
+  font-weight: bold;
+  line-height: 1.38;
+  font-size: 14px;
+}
+.postPreviewContainer .twitter .postBodyContent .clientAlias span.twitterAvatar {
+  color: #999;
+  font-weight: normal;
+  font-size: 13px;
+}
+.postPreviewContainer .twitter .postBodyContent .postText {
+  font-weight: normal;
+  line-height: 1.38;
+}
+.postPreviewContainer .twitter .postBodyContent .postText .pp-tw-hashtag-link,
+.postPreviewContainer .twitter .postBodyContent .postText .pp-tw-hashtag-hash {
+  color: #2574AD;
+}
+.postPreviewContainer .twitter .postBodyContent .postImage {
+  margin: 5px 0;
+}
+.postPreviewContainer .twitter .postBodyContent .postImage img {
+  border-radius: 5px;
+  max-height: 275px;
+  max-width: 275px;
+}
+.postPreviewContainer .twitter .postDetails {
+  font-size: 14px;
+  clear: both;
+  color: #ccd6dd;
+  padding-top: 10px;
+}

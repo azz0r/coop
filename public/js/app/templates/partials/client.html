@@ -1,0 +1,10 @@
+<script type="text/template" id="partialClientTemplate">
+    <label for="filterClient">Client</label>
+
+    <select class="filterBy" data-type="client" id="filterClient">
+        <option value="">All (Clients)</option>
+        <% _.each(values, function(val, key) { %>
+        <option value="<%=val.id%>" <% if (value == val.id) { %> selected="selected"<% } %>><%=val.name%></option>
+        <% }); %>
+    </select>
+</script>

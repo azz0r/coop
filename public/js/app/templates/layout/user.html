@@ -1,0 +1,7 @@
+<script type="text/template" id="layoutUserTemplate">
+    <% if (signedIn) { %>
+        <a href="#updatePassword"><%=user.first_name%> <%=user.last_name%></a>
+    <% } else { %>
+       <!-- nothing for now -->
+    <% } %>
+</script>

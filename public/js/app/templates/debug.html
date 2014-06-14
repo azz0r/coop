@@ -1,0 +1,33 @@
+<div>
+    <h2>
+        <img src="/img/icons/32/welcome.png" /> Debug
+    </h2>
+
+    <div class="loadingActive">
+        <div class="loading"></div>
+    </div>
+
+    <div>
+        <h3>Permission function tests</h3>
+        <ul>
+            <li>
+                <div>isSignedIn: Am I signed in: true/false</div>
+                <div><%=_.print_r(_.isSignedIn())%></div>
+                <br />
+            </li>
+        </ul>
+    </div>
+
+
+    <div>
+       <h3>Permissions</h3>
+        <%=_.print_r(_.getPermissions())%>
+    </div>
+
+
+
+    <div>
+        <h3>User</h3>
+        <%=_.print_r(_.getUser())%>
+    </div>
+</div>

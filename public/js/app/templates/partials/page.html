@@ -1,0 +1,36 @@
+<script type="text/template" id="partialPageTemplate">
+    <% if (totalPages > 1) { %>
+        <div class="pageSelector">
+            <% if (totalPages < 12) { %>
+                <ul class="pageList">
+                    <li class="previous btn btn-small btn-info">
+                        <i class="fa fa-step-backward"></i> Previous
+                    </li>
+                    <% _.each(_.range(1, totalPages+1), function(val, key) { %>
+                        <li class="pageChange btn btn-small <% if (val == currentPage) { %> active<% } %>" data-page="<%=val%>"><%=val%></li>
+                    <% }); %>
+                    <li class="next btn btn-small btn-info">
+                        Next <i class="fa fa-step-forward"></i>
+                    </li>
+                </ul>
+            <% } else { %>
+                <span class="previous btn btn-small btn-info">
+                    <i class="fa fa-step-backward"></i> Previous
+                </span>
+                <select class="pageChange">
+                    <% _.each(_.range(1, totalPages+1), function(val, key) { %>
+                    <option value="<%=val%>" <% if (val == currentPage) { %> selected="selected"<% } %>"><%=val%></li>
+                    <% }); %>
+                </select>
+                <span class="next btn btn-small btn-info">
+                    Next <i class="fa fa-step-forward"></i>
+                </span>
+            <% } %>
+        </div>
+        <div class="pagerInfo">
+            Current Page: <%=currentPage%> <i class="fa fa-dot-circle-o fa-1"></i>
+            Per Page: <%=perPage%> <i class="fa fa-dot-circle-o fa-1"></i>
+            Total Items: <%=_.numberWithCommas(totalItems)%>
+        </div>
+    <% } %>
+</script>

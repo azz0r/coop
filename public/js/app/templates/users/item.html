@@ -1,0 +1,37 @@
+<script type="text/template" id="usersItemTemplate">
+    <td>
+        <div><input type="text" value="<%=model.first_name%>" class="first_name" /></div>
+        <div><input type="text" value="<%=model.last_name%>" class="last_name" /></div>
+            <div>
+                <select class="role">
+                    <% _.each(roles, function(val, key) { %>
+                        <option value="<%=val.id%>"<% if (val.id == model.role) { %>selected="selected"<% } %>>
+                            <%=val.humanised%>
+                        </option>
+                    <% }) %>
+                </select>
+            </div>
+    </td>
+    <td>
+        <div><i class="fa fa-home fa-1" title="Personal"></i> <input type="text" value="<%=model.personal_email%>" class="personal_email" placeholder="Personal Email" /></div>
+        <div><i class="fa fa-building-o fa-1" title="Work"></i> <input type="text" value="<%=model.email%>" class="email" placeholder="Work Email" /></div>
+    </td>
+    <td>
+        <div><i class="fa fa-home fa-1" title="Personal"></i> <input type="text" value="<%=model.personal_phone_number%>" class="personal_phone_number" placeholder="Personal Phone Number" /></div>
+        <div><i class="fa fa-building-o fa-1" title="Work"></i> <input type="text" value="<%=model.work_phone_number%>" class="work_phone_number" placeholder="Work Phone Number" /></div>
+    </td>
+    <td>
+        <div><i class="fa fa-home fa-1" title="Personal"></i> <input type="text" value="<%=model.personal_address%>" class="personal_address" placeholder="Personal Address" /></div>
+        <div><i class="fa fa-building-o fa-1" title="Work"></i> <input type="text" value="<%=model.work_address%>" class="work_address" placeholder="Work Address" /></div>
+    </td>
+    <td>
+        <div>
+            <button class="btn btn-small btn-success save"> <i class="fa fa-floppy-o fa-1"></i> Save </button>
+            <button class="btn btn-small btn-success update"> <i class="fa fa-pencil-square-o fa-1"></i>  Edit</button>
+        </div>
+        <div>
+            <button class="btn btn-small btn-danger reset"> <i class="fa fa-refresh fa-1"></i> Reset</button>
+            <button class="btn btn-small btn-danger delete"> <i class="fa fa-minus-circle fa-1"></i> Delete</button>
+        </div>
+    </td>
+</script>

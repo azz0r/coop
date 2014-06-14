@@ -1,0 +1,56 @@
+.postPreviewContainer .facebook {
+  background: white;
+  padding: 15px;
+  font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
+  font-size: 13px;
+}
+.postPreviewContainer .facebook .clientProfileImage {
+  float: left;
+  width: 60px;
+}
+.postPreviewContainer .facebook .postBodyContent {
+  margin-left: 65px;
+}
+.postPreviewContainer .facebook .postBodyContent .clientAlias {
+  color: #3b5998;
+  font-weight: bold;
+  line-height: 1.38;
+}
+.postPreviewContainer .facebook .postBodyContent .postText {
+  font-weight: normal;
+  line-height: 1.38;
+  margin-top: 4px;
+}
+.postPreviewContainer .facebook .postBodyContent .postImage {
+  margin: 5px 0;
+}
+.postPreviewContainer .facebook .postBodyContent .postLink {
+  font-size: 11px;
+  padding: 10px;
+  background: #f7f7f7;
+  line-height: 1.3em;
+}
+.postPreviewContainer .facebook .postBodyContent .postLink .postLinkImage img {
+  max-height: 300px;
+  max-width: 400px;
+}
+.postPreviewContainer .facebook .postBodyContent .postLink .postLinkTitle {
+  color: #3b5998;
+  font-weight: bold;
+}
+.postPreviewContainer .facebook .postBodyContent .postLink .postLinkDescription {
+  color: gray;
+  width: 400px;
+}
+.postPreviewContainer .facebook .postBodyContent .postLink .postLinkLink,
+.postPreviewContainer .facebook .postBodyContent .postLink .postLinkLink a {
+  color: gray;
+  font-size: 10px;
+}
+.postPreviewContainer .facebook .postDetails {
+  font-size: 11px;
+  clear: both;
+  color: #6d84b4;
+  margin-left: 65px;
+  margin-top: 4px;
+}

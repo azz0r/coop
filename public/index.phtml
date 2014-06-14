@@ -1,0 +1,60 @@
+<?php
+$env    = isset($_SERVER['_ENV']) && $_SERVER['_ENV'] == "production" ? 'prod' : 'dev';
+$less   = array('bootstrap', 'mixins', 'style', 'pageDesigns', 'quickview', 'loading',
+    'postPreviews/facebook', 'postPreviews/twitter', 'postPreviews/googleplus', 'postPreviews/instagram', 'postPreviews/index');
+?><html lang=en xmlns=http://www.w3.org/1999/xhtml>
+<head>
+    <title>Arena</title>
+    <meta http-equiv=Content-Type content="text/html; charset=utf-8"/>
+    <meta http-equiv=Content-Type content=cache/>
+
+    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico" />
+
+    <meta name="description" content="A simple time tracking system to manage users, clients, teams, holiday requests and sickness tracking. Allowing you to view simple, yet detailed story based analytics reports by client, user and team.">
+    <meta name="revisit-after" content="30 days">
+    <meta name="distribution" content="web">
+    <meta name="keywords" content="time tracking, client management, hr system, hr management, holiday approvals, sickness tracking, time calendaring">
+
+    <!--Fonts-->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+    <!-- compiled less file -->
+    <?php foreach ($less as $file) { ?>
+        <?php if ($env == "prod") { ?>
+    <link rel="stylesheet" type="text/css" href="/css/<?php echo $file; ?>.css" />
+    <?php } else { ?>
+    <link rel="stylesheet/less" type="text/css" href="/css/<?php echo $file; ?>.less" />
+    <?php } ?>
+        <script src="/js/libs/less.js" type="text/javascript"></script>
+    <?php } ?>
+
+    <!-- library design -->
+    <link media="screen" rel="stylesheet" type="text/css" href="/js/libs/chosen/chosen.css" />
+    <link media="screen" rel="stylesheet" type="text/css" href="/js/libs/jquery/jquery-ui-1.10.3.custom.min.css" />
+</head>
+<body class="signedOut" id="document">
+<div id="quickviewLatch"></div>
+<div id="wrapper">
+    <div id="top"><a href="#">Arena</a></div>
+    <div id="sidebar">
+        <div id="sidebarInner"></div>
+        <div id="userActions"></div>
+    </div>
+    <div id="content">
+        <div id="contentInner"></div>
+    </div>
+</div>
+<footer id="footer">
+    <h1>Co Parent Match</h1>
+    <div class="information">
+        Co-Parent-Match.Com is a website designed to help users find a like mind with the view to help conceive and/or raise a child either as a donor only, or in a co-parenting role. With advanced search, helpful tools and clear profiles: users can find the perfect co-parenting match for them. Tips and advice, as well as a quick and efficient messaging service means users can easily find one another and communicate with ease.
+    </div>
+    <ul class="support">
+        <li class="btn btn-info"><a href="#aboutUs">About Us</a></li>
+        <li class="btn btn-info"><a href="#FAQ">F.A.Q</a></li>
+        <li class="btn btn-info"><a href="#support">Support</a></li>
+    </ul>
+</footer>
+<script data-main="js/main" src="js/libs/require/require.js"></script>
+</body>
+</html>

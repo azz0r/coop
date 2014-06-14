@@ -1,0 +1,52 @@
+.postPreviewContainer.instagramPreview {
+  position: relative;
+  background: url('/img/posts/preview/instagram.png');
+  padding: 0px;
+  font: normal 13px Roboto,arial,sans-serif;
+  background-repeat: no-repeat;
+  width: 338px;
+  height: 600px;
+  margin: 15px;
+
+  .clientProfileImage {
+    position: absolute;
+    top: 73px;
+    left: 15px;
+    img {
+      -webkit-border-radius: 50%;
+      border-radius: 50%;
+      max-width: 40px;
+    }
+  }
+  .clientAlias a {
+    color: #3f729b;
+    text-shadow: 0 1px 0 rgba(255,255,255,.8);
+    font-weight: 700;
+    line-height: 16px;
+    position: absolute;
+    top: 75px;
+    left: 65px;
+  }
+  .clientDatetime {
+    color: #999;
+    line-height: 16px;
+    position: absolute;
+    top: 95px;
+    left: 65px;
+  }
+  .postText {
+    position: absolute;
+    top: 464px;
+    left: 27px;
+    font-size: 12px;
+    line-height: 20px;
+    color: #222;
+    -webkit-font-smoothing: antialiased;
+    width: 300px;
+    height: 80px;
+    overflow: scroll;
+  }
+  .postImage {
+    display: none;
+  }
+}

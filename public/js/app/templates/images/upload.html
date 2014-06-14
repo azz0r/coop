@@ -1,0 +1,35 @@
+<script type="text/template" id="clientsItemTemplate">
+    <div id="imageListContainer">
+        <% if (!quickview) { %>
+        <h2>
+            <i class="fa fa-picture-o fa-3"></i> Upload Images
+        </h2>
+        <% } %>
+        <div class="uploadImages">
+            <div>
+                <select id="client" name="client">
+                    <% _.each(clients, function(client, key) { %>
+                    <option value="<%=client.id%>"><%=client.name%></option>
+                    <% }) %>
+                </select>
+            </div>
+            <div>
+                <input type="file" id="choose" multiple="multiple" class="btn btn-success" />
+            </div>
+        </div>
+
+        <% if (collection.length > 0) { %>
+        <button class="btn btn-success save">Save Images</button>
+        <button class="btn btn-danger clear">Clear Uploads</button>
+        <ul id="imagesBody">
+            <% _.each (collection, function(val, key) { %>
+            <li class="item">
+                <div class="image">
+                    <img src="<%=val.base64%>" />
+                </div>
+            </li>
+            <% }) %>
+        </ul>
+        <% } %>
+    </div>
+</script>
