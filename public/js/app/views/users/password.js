@@ -1,4 +1,4 @@
-define(["marionette", "underscore", "text!app/templates/users/update_password.html", "app/models/user"],
+define(["marionette", "underscore", "text!app/templates/users/password.html", "app/models/user"],
   function (Marionette, _, Template, Model) {
   "use strict";
 

@@ -1,25 +1,29 @@
 <?php
 $env    = isset($_SERVER['_ENV']) && $_SERVER['_ENV'] == "production" ? 'prod' : 'dev';
-$less   = array('bootstrap', 'mixins', 'style', 'pageDesigns', 'quickview', 'loading');
+$less   = array('mixins', 'style', 'pageDesigns', 'quickview', 'loading');
 ?><html lang=en xmlns=http://www.w3.org/1999/xhtml>
 <head>
-    <title>Arena</title>
     <meta http-equiv=Content-Type content="text/html; charset=utf-8"/>
-    <meta http-equiv=Content-Type content=cache/>
+    <meta http-equiv=Content-Type content="cache" />
 
     <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico" />
 
-    <meta name="description" content="A simple time tracking system to manage users, clients, teams, holiday requests and sickness tracking. Allowing you to view simple, yet detailed story based analytics reports by client, user and team.">
-    <meta name="revisit-after" content="30 days">
-    <meta name="distribution" content="web">
-    <meta name="keywords" content="time tracking, client management, hr system, hr management, holiday approvals, sickness tracking, time calendaring">
+    <title>Co Parent Match, Co-parenting, Sperm Donor, Parenting - Co-Parent-Match.Com</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="More and more Male/Female, Gay/Straight, Singles/Couples are looking to but are unable to go about it the conventional way and need a likeminded friend or donor to provide the sperm, or the egg, as well as the support to raise a child! Perfect for Gay, (Single or Coupled) Females who need a donor or co-parent, Gay (Single or Coupled) Males looking to parent a child as well as Male/Female couples experiencing difficulties and needing a donor, Females offering surrogacy and Men offering to be a sperm donor. With helpful tools and clear profiles users can find the perfect sperm donor for them." />
+    <meta name="keywords" content="co parent match, co-parent match maker, match maker, co parent match, baby making, match making, find a partner, insemination partner, couple for baby, adoption, artificial insemination, co-parent matching, sperm donation, sperm donor, gay parenting, lesbian parenting, gay and lesbian co parenting" />
+    <meta name="robots" content="INDEX,FOLLOW" />
+    <meta name="revisit-after" content="1 days" />
+
 
     <!--Fonts-->
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
     <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
 
+
     <link rel="stylesheet" type="text/css" href="/css/bootstrap/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="/css/bootstrap/bootstrap-theme.css" />
+
 
     <?php foreach ($less as $file) { ?>
         <?php if ($env == "prod") { ?>
@@ -34,57 +38,65 @@ $less   = array('bootstrap', 'mixins', 'style', 'pageDesigns', 'quickview', 'loa
     <link media="screen" rel="stylesheet" type="text/css" href="/js/libs/chosen/chosen.css" />
     <link media="screen" rel="stylesheet" type="text/css" href="/js/libs/jquery/jquery-ui-1.10.3.custom.min.css" />
 </head>
+
+
 <body class="signedOut" id="document">
-    <div id="quickviewLatch"></div>
-    <div class="container">
+<div id="quickviewLatch"></div>
+<div class="container">
 
 
-        <!-- header -->
+    <!-- header -->
+    <div class="row">
         <header id="header">
             <h1>Co Parent Match</h1>
-            <!-- Nav tabs -->
-            <ul class="nav nav-tabs">
-                <li class="active">
-                    <a href="#" data-toggle="tab">
-                        <i class="fa fa-fw fa-home"></i> Home
-                    </a>
-                </li>
-                <li><a href="#findAMatch" data-toggle="tab"><i class="fa fa-fw fa-users"></i> Find A Match</a></li>
-                <li><a href="#messages" data-toggle="tab"><i class="fa fa-fw fa-inbox"></i> Messages </a></li>
-                <li><a href="#mySearches" data-toggle="tab"><i class="fa fa-fw fa-search"></i> Searches</a></li>
-                <li><a href="#updateProfile" data-toggle="tab"><i class="fa fa-fw fa-pencil-square-o"></i> Update Profile</a></li>
-                <li><a href="#articles" data-toggle="tab"><i class="fa fa-fw fa-book"></i> Articles</a></li>
-            </ul>
         </header>
-
-
-        <!-- content area -->
-        <div id="content" class="row">
-            <div id="contentInner" class="col-md-8"></div>
-            <div id="sidebar" class="col-md-4">
-                <div id="sidebarInner"></div>
-                <div id="userActions"></div>
-            </div>
-        </div>
-
-
-        <!-- footer area -->
-        <div class="row">
-            <footer  class="col-md-12" id="footer">
-                <h1>Co Parent Match</h1>
-                <div class="information">
-                    Co-Parent-Match.Com is a website designed to help users find a like mind with the view to help conceive and/or raise a child either as a donor only, or in a co-parenting role. With advanced search, helpful tools and clear profiles: users can find the perfect co-parenting match for them. Tips and advice, as well as a quick and efficient messaging service means users can easily find one another and communicate with ease.
-                </div>
-                <ul class="support">
-                    <li class="btn btn-info"><a href="#aboutUs">About Us</a></li>
-                    <li class="btn btn-info"><a href="#FAQ">F.A.Q</a></li>
-                    <li class="btn btn-info"><a href="#support">Support</a></li>
-                </ul>
-            </footer>
-        </div>
-
-
     </div>
-    <script data-main="js/main" src="js/libs/require/require.js"></script>
+
+
+    <div class="row">
+        <ol class="breadcrumb">
+            <li>
+                <a href="#">
+                    <i class="fa fa-fw fa-home"></i> Home
+                </a>
+            </li>
+            <li><a href="/#findAMatch"><i class="fa fa-fw fa-users"></i> Find A Match</a></li>
+            <li><a href="/#messages"><i class="fa fa-fw fa-inbox"></i> Messages </a></li>
+            <li><a href="/#mySearches"><i class="fa fa-fw fa-search"></i> Searches</a></li>
+            <li><a href="/#updateProfile"><i class="fa fa-fw fa-pencil-square-o"></i> Update Profile</a></li>
+            <li><a href="/#articles"><i class="fa fa-fw fa-book"></i> Articles</a></li>
+        </ol>
+    </div>
+
+
+    <!-- content area -->
+    <div id="content" class="row">
+        <div id="contentInner" class="col-md-8"></div>
+        <div id="sidebar" class="col-md-4">
+            <div id="sidebarInner"></div>
+            <div id="userActions"></div>
+        </div>
+    </div>
+
+
+    <!-- footer area -->
+    <div class="row">
+        <footer  class="col-md-12" id="footer">
+            <h1>Co Parent Match</h1>
+            <div class="information">
+                Co-Parent-Match.Com is a website designed to help users find a like mind with the view to help conceive and/or raise a child either as a donor only, or in a co-parenting role. With advanced search, helpful tools and clear profiles: users can find the perfect co-parenting match for them. Tips and advice, as well as a quick and efficient messaging service means users can easily find one another and communicate with ease.
+            </div>
+            <br />
+            <ul class="support">
+                <li class="btn btn-info"><a href="#aboutUs">About Us</a></li>
+                <li class="btn btn-info"><a href="#FAQ">F.A.Q</a></li>
+                <li class="btn btn-info"><a href="#support">Support</a></li>
+            </ul>
+        </footer>
+    </div>
+
+
+</div>
+<script data-main="js/main" src="js/libs/require/require.js"></script>
 </body>
 </html>

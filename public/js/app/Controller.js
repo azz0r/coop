@@ -29,18 +29,6 @@ define(["jquery","app/helper/user", "app/helper/underscore"],
       },
 
 
-      // users
-      users: function() {
-        userCheck.authenticate("app/views/users/index");
-      },
-      createUser: function() {
-        userCheck.authenticate("app/views/users/form");
-      },
-      updateUser: function(id) {
-        userCheck.authenticate("app/views/users/form",{id: id});
-      },
-
-
       // images
       images: function() {
         userCheck.authenticate("app/views/images/index");
@@ -73,7 +61,7 @@ define(["jquery","app/helper/user", "app/helper/underscore"],
           })
       },
       updatePassword: function() {
-        userCheck.authenticate("app/views/users/update_password");
+        userCheck.authenticate("app/views/users/password");
       }
 
 

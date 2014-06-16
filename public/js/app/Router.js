@@ -10,10 +10,6 @@ define(['marionette', 'app/Controller'], function(marionette, Controller) {
       FAQ: 'FAQ',
       aboutUs: 'aboutUs',
 
-      /* users */
-      users: 'users',
-      createUser: 'createUser',
-      'updateUser/:id': 'updateUser',
       signIn: 'signIn',
       updatePassword: 'updatePassword',
       signOut: 'signOut',

@@ -16,19 +16,13 @@ define(["marionette", "text!app/templates/layout/sidebar.html"],
 	    onRender: function() {
 
         var that = this;
+
         MyApp.vent.on('signIn:successful', function(){
           that.render()
         })
         MyApp.vent.on('signOut:successful', function(){
           that.render()
         })
-
-        setTimeout(function() {
-          $('.fa-star-o, .fa-frown-o, .fa-clock-o').hover(
-            function(){ $(this).addClass('fa-spin') },
-            function(){ $(this).removeClass('fa-spin') }
-          )
-        }, 500)
       }
 
 

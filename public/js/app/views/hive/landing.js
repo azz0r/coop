@@ -2,13 +2,11 @@ define([
   'app/views/hive/signup',
   'app/views/hive/signin',
   'app/views/hive/signup-success',
-  'app/views/hive/information',
   "tpl!app/templates/hive/landing.html"
 ],
   function (SignupView,
             SigninView,
             SignupSuccessfulView,
-            InformationView,
             template) {
     "use strict"
     var AppLayout
@@ -38,15 +36,11 @@ define([
       renderSignupSuccessful: function(options) {
         this.leftColumn.show(new SignupSuccessfulView(options));
       },
-      renderInformation: function() {
-        this.topColumn.show(new InformationView());
-      },
       onRender: function () {
         if (!_.isSignedIn()) {
           this.renderSignin();
           this.renderSignup();
         }
-        this.renderInformation();
       }
     })
     return AppLayout
