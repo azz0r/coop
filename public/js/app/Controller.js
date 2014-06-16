@@ -29,6 +29,13 @@ define(["jquery","app/helper/user", "app/helper/underscore"],
       },
 
 
+      messages: function() {
+        return require(["app/views/messages/index"], function(View) {
+          return MyApp.content.show(new View())
+        })
+      },
+
+
       // images
       images: function() {
         userCheck.authenticate("app/views/images/index");

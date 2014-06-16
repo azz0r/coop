@@ -5,7 +5,7 @@ define(["marionette", "underscore", "text!app/templates/hive/signin.html", "app/
 
 
     events: {
-      'click #signinButton':        'signIn',
+      'click #signInButton':        'signIn',
       'keypress input[type=text]':  'pressedEnter'
     },
 

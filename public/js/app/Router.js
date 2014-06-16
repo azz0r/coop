@@ -14,6 +14,8 @@ define(['marionette', 'app/Controller'], function(marionette, Controller) {
       updatePassword: 'updatePassword',
       signOut: 'signOut',
 
+      messages: 'messages',
+
       /* images */
       images: 'images',
       uploadImage: 'uploadImage'
