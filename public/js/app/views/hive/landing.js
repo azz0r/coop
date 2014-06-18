@@ -20,7 +20,7 @@ define([
       },
       initialize: function(options) {
         if (_.isSignedIn()) {
-          window.location.hash = "calendar"
+          window.location.hash = ""
         }
         var that = this
         MyApp.vent.on('signUp:successful', function(options){

@@ -1,11 +1,11 @@
 <script type="text/template">
-    <div class="row show-grid" id="landing">
-        <div class="col-md-6" id="signUpView"></div>
-        <div class="col-md-6" id="signInView"></div>
-    </div>
-
-    <br />
-
+    <% if (!_.isSignedIn()) { %>
+        <div class="row show-grid" id="landing">
+            <div class="col-md-6" id="signUpView"></div>
+            <div class="col-md-6" id="signInView"></div>
+        </div>
+        <br />
+    <% } %>
     <div class="well">
         <p><strong>Co-Parent-Match.Com</strong> is a web service to help connect you with people like you!</p>
         <p>More and more people are looking to parent a child but due to circumstance are unable to go about it
