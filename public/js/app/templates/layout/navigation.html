@@ -32,5 +32,12 @@
                 <i class="fa fa-fw fa-book"></i> Articles
             </a>
         </li>
+        <% if (_.isSignedIn()) { %>
+        <li>
+            <a href="/#signOut">
+                <i class="fa fa-fw fa-pencil-square-o"></i> Sign Out
+            </a>
+        </li>
+        <% } %>
     </ol>
 </script>

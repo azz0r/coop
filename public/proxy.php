@@ -387,14 +387,14 @@ class ProxyController
             /* if we have a session id then set it for future use */
             /* now fetch the user */
             $request = new OpenSource_Rest(API_URL.'system/session', 'GET');
-            $request->setUsername('aaron.lote@gmail.com');
+            $request->setUsername('user.one@gmail.com');
             $request->setPassword('admin123');
             $request->execute();
             $sessionId = $request->getBody();
 
             /* if we have a session id then set it for future use */
             if ($sessionId) {
-                $request = new OpenSource_Rest(API_URL.'hive?session_id='.$sessionId, 'POST', $_POST);
+                $request = new OpenSource_Rest(API_URL.'user?session_id='.$sessionId, 'POST', $_POST);
                 $request->execute();
                 $result = $request->getBody();
 

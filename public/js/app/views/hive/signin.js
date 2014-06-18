@@ -42,7 +42,7 @@ define([
           } else {
             localStorage.setObject('user', response.user);
             MyApp.vent.trigger('signIn:successful')
-            return window.location.hash = 'images';
+            return window.location.hash = 'home';
           };
         })
         return false;
