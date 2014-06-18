@@ -89,13 +89,15 @@ define(["underscore"], function(_) {
     },
 
 
-    getUser: function () {
+    getUser: function (field) {
+
       this.user = localStorage.getObject('user');
       return this.user;
     },
 
 
-    inArray: function(item,arr) {
+    inArray: function(item, arr) {
+
       if(!arr) {
         return false;
       } else {

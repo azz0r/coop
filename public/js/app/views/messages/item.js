@@ -5,13 +5,19 @@ define(["marionette", "text!app/templates/messages/item.html", "app/models/messa
 
     return Backbone.Marionette.ItemView.extend({
       template: Template,
-      tagName: "li",
+      tagName: 'div',
+      className: 'row',
 
 
       serializeData: function() {
-        var model = new Model();
+
+        var modelObject = this.model.toJSON();
+        var arrayObject = $.map(modelObject, function (value, key) { return value; });
+
         return {
-          model: this.model.toJSON()
+          messages: arrayObject,
+          lastMessage: arrayObject[arrayObject.length - 1],
+          messageCount: arrayObject.length
         }
       }
 

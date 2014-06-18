@@ -368,7 +368,7 @@ class ProxyController
             $sessionId = $request->getBody();
 
             /* if we have a session id then set it for future use */
-            if ($sessionId) {
+            if ($sessionId && !isset($sessionId->errors)) {
                 $this->session_id = $_SESSION['session_id'] = $sessionId;
                 /* now fetch the user */
                 $request = new OpenSource_Rest(API_URL.'system/user?session_id='.$this->session_id, 'GET');

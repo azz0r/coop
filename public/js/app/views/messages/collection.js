@@ -1,6 +1,6 @@
 define([
   "text!app/templates/messages/collection.html",
-  "app/collections/messages",
+  "app/collections/messages/conversations",
   "app/views/messages/item",
   "baseCollectionView"
 ],

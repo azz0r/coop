@@ -1,10 +1,15 @@
 define([
   "text!app/templates/messages/index.html",
-  'app/views/partials/clear_filter',
+//  'app/views/partials/clear_filter',
   'app/views/messages/collection',
-  'app/views/messages/partials/order_by'
+//  'app/views/messages/partials/order_by'
 ],
-  function(Template, ClearFilterView, CollectionView, OrderByView) {
+  function(
+    Template,
+//    ClearFilterView,
+    CollectionView
+//    OrderByView
+    ) {
     "use strict"
 
     return Backbone.Marionette.Layout.extend({
@@ -60,14 +65,14 @@ define([
       },
 
 
-      renderClearFilter: function(options) {
-        this.clearFilter.show(new ClearFilterView(options));
-      },
+//      renderClearFilter: function(options) {
+////        this.clearFilter.show(new ClearFilterView(options));
+//      },
 
 
-      renderOrderBy: function(options) {
-        this.orderBy.show(new OrderByView(options));
-      },
+//      renderOrderBy: function(options) {
+////        this.orderBy.show(new OrderByView(options));
+//      },
 
       renderCollection: function(options) {
         // render the post list
@@ -88,10 +93,10 @@ define([
         }
 
         //render the clear filter button
-        this.renderClearFilter({key: 'messageFilter'});
+//        this.renderClearFilter({key: 'messageFilter'});
 
         // ordering
-        this.renderOrderBy(this.filter);
+//        this.renderOrderBy(this.filter);
 
         // render the collection
         this.renderCollection(this.filter);

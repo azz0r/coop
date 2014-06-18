@@ -40,6 +40,7 @@ require.config({
   }
 })
 
+
 require(["app/App", "backbone", "modelBinder", "app/Router", "quickview", "app/helper/underscore", "bootstrap"],
   function(app, Backbone, modelBinder, Router, QuickView, UnderscoreHelper, Bootstrap) {
     "use strict"
