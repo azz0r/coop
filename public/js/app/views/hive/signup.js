@@ -1,5 +1,5 @@
-define(["marionette", "underscore", "text!app/templates/hive/signup.html", "text!app/templates/hive/signup-success.html", "app/models/user", "jquery"],
-  function (Marionette, _, Template, SuccessTemplate, Model,$) {
+define(["marionette", "text!app/templates/hive/signup.html", "text!app/templates/hive/signup-success.html", "app/models/user"],
+  function (Marionette, Template, SuccessTemplate, Model) {
   "use strict";
   return Backbone.Marionette.ItemView.extend({
 
@@ -11,6 +11,12 @@ define(["marionette", "underscore", "text!app/templates/hive/signup.html", "text
 
 
     template: Template,
+
+
+    initialize: function() {
+      this.template = SuccessTemplate;
+      return this.render();
+    },
 
 
     pressedEnter: function(e) {

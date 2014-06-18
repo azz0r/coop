@@ -2,11 +2,11 @@
     <div class="panel panel-default">
         <div class="panel-heading">
             <h3 class="panel-title">
-                Conversation with <% if (_.getUser()._id.$id == lastMessage.by_user._id.$id) { %>
+                Conversation with <em><% if (_.getUser()._id.$id == lastMessage.by_user._id.$id) { %>
                     <%=lastMessage.to_user.username%>
                 <% } else { %>
                     <%=lastMessage.by_user.username%>
-                <% } %> · <%=messageCount%> messages
+                <% } %></em> · <%=messageCount%> messages
             </h3>
         </div>
         <div class="panel-body">
