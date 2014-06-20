@@ -15,6 +15,5 @@ define([
       collection: new Collection(),
       pageCollection: new Collection()
 
-
     })
   })
