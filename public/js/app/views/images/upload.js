@@ -3,17 +3,17 @@ define(["marionette", "text!app/templates/images/upload.html", "app/collections/
     "use strict"
     return Backbone.Marionette.ItemView.extend({
       template: Template,
-      tagName: "li",
+      tagName: "div",
       className: "item",
 
       events: {
-        'change #asd': 'readImage',
         'click .save': 'onClickSaveImages',
         'click .clear': 'onClickClearImages'
       },
 
 
       initialize: function(options) {
+
         // create a collection for us to play with
         this.options = options;
         this.collection = new Collection();
@@ -56,13 +56,16 @@ define(["marionette", "text!app/templates/images/upload.html", "app/collections/
 
 
       onClickClearImages: function() {
+
         this.collection.reset();
         this.render();
       },
 
 
       onRender: function() {
+
         var that = this;
+
         setTimeout(function() {
           $("#choose").change(function (e) {
             if(this.disabled) return alert('File upload not supported!');
@@ -90,8 +93,7 @@ define(["marionette", "text!app/templates/images/upload.html", "app/collections/
               filename: file.name,
               type: file.type,
               size: ~~(file.size/1024),
-              base64: this.src,
-              client: $('#client option:selected').val()
+              base64: this.src
             };
             that.collection.add(newImage);
             that.render();
@@ -105,7 +107,6 @@ define(["marionette", "text!app/templates/images/upload.html", "app/collections/
 
       serializeData: function() {
         return {
-          clients: localStorage.getObject('clients'),
           collection: this.collection.toJSON(),
           quickview: _.has(this.options, 'quickview') ? this.options.quickview : false
         }
