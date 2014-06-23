@@ -1,14 +1,7 @@
 <script type="text/template" id="clientsFormTemplate">
     <div class="generalForm" id="imageQuickviewForm">
-
         <div id="imageContainer">
-            <img src="<%=urls.thumb%>" />
-            <% if (!_.isEmpty(user)) { %>
-            <div class="controlGroup">
-                <label class="controlLabel">Uploaded By <%=user.first_name%> <%=user.last_name%>
-            </div>
-            <% } %>
+            <img src="<%=urls.full%>" />
         </div>
     </div>
-
 </script>

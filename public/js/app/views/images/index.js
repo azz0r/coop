@@ -1,15 +1,11 @@
 define([
   "text!app/templates/images/index.html",
 
-  'app/views/partials/clear_filter',
-
   'app/views/images/collection',
-
-  'app/views/images/partials/order_by',
 
   'app/views/images/upload'
 ],
-  function(Template, ClearFilterView, CollectionView, OrderByView, CreateView) {
+  function(Template, CollectionView, CreateView) {
     "use strict"
 
     return Backbone.Marionette.Layout.extend({
@@ -19,8 +15,6 @@ define([
 
 
       regions: {
-        clearFilter: '#clearFilter',
-        orderBy: '#orderByContainer',
         collectionLatch: '#collectionLatch'
       },
 
@@ -64,9 +58,7 @@ define([
         // create our new filter object using jQuery picking the values
         var filter = {
           from: "0",
-          to: 100,
-          order_by: $('#orderBy').val(),
-          order_direction: $('#orderBy option:selected').data('direction')
+          to: 100
         };
 
         // set the filter object to local storage (extended, not typical)
@@ -74,16 +66,6 @@ define([
 
         // return the filter after passing it through a null stripper
         return _.cleanNullFieldsFromObject(filter);
-      },
-
-
-      renderClearFilter: function(options) {
-        this.clearFilter.show(new ClearFilterView(options));
-      },
-
-
-      renderOrderBy: function(options) {
-        this.orderBy.show(new OrderByView(options));
       },
 
 
@@ -104,12 +86,6 @@ define([
         } else {
           this.filter = this.getFilter();
         }
-
-        //render the clear filter button
-        this.renderClearFilter({key: 'imageFilter'});
-
-        // render order view
-        this.renderOrderBy(this.filter);
 
         // render the collection
         this.renderCollection(this.filter);

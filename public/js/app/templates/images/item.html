@@ -1,12 +1,5 @@
 <script type="text/template" id="clientsItemTemplate">
-    <div class="image">
-        <img src="<%=urls.thumb%>" />
-    </div>
-    <div class="details">
-        <% if (!_.isEmpty(user)) { %>
-        <div class="user">
-            <%=user.full_name%>
-        </div>
-        <% } %>
+    <div class="image col-xs-6 col-md-3">
+        <img src="<%=urls.thumb%>" class="thumbnail" />
     </div>
 </script>

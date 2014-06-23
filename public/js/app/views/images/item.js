@@ -3,8 +3,7 @@ define(["marionette", "text!app/templates/images/item.html", "app/views/images/q
   "use strict"
   return Backbone.Marionette.ItemView.extend({
     template: Template,
-    tagName: "li",
-    className: "item",
+    tagName: "div",
 
 
     events: {
