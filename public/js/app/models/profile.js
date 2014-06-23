@@ -6,6 +6,11 @@ define(["baseModel"],
     urlRoot: "profile",
 
 
+    getAgeOptions: function() {
+      return _.range(18, 85);
+    },
+
+
     getIsAOptions: function() {
       return [
 //        {id: '4,5,6,7,9', 'humanised': 'Male'},
@@ -68,9 +73,9 @@ define(["baseModel"],
 
     getSexOptions: function() {
       return [
-        {id: 'M', 'humanised': 'Male'},
-        {id: 'F', 'humanised': 'Female'},
-        {id: 'O', 'humanised': 'Other'},
+        {id: 'm', 'humanised': 'Male'},
+        {id: 'f', 'humanised': 'Female'},
+        {id: 'o', 'humanised': 'Other'},
       ];
     },
 
@@ -97,7 +102,7 @@ define(["baseModel"],
     },
 
 
-    getStarsignOptions: function() {
+    getStarSignOptions: function() {
       return [
         {id: '1', 'humanised': 'Aries'},
         {id: '2', 'humanised': 'Taurus'},
@@ -149,7 +154,7 @@ define(["baseModel"],
     },
 
 
-    getEthnicOptions: function() {
+    getEthnicityOptions: function() {
       return [
         {id: '1', 'humanised': 'Arab'},
         {id: '2', 'humanised': 'Asian'},
