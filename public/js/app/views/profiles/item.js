@@ -6,7 +6,6 @@ define(["marionette", "text!app/templates/profiles/item.html", "app/models/profi
     return Backbone.Marionette.ItemView.extend({
       template: Template,
       tagName: 'div',
-      className: 'row',
 
 
       serializeData: function() {

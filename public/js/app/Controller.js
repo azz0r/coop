@@ -39,6 +39,11 @@ define(["jquery","app/helper/user", "app/helper/underscore"],
           return MyApp.content.show(new View())
         })
       },
+      updateProfile: function() {
+        return require(["app/views/profiles/form"], function(View) {
+          return MyApp.content.show(new View())
+        })
+      },
 
 
       // images

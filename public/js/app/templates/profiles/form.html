@@ -1,0 +1,156 @@
+<script type="text/template" id="profilesFormTemplate">
+    <form role="form">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#home" data-toggle="tab">Looking For</a></li>
+            <li><a href="#details" data-toggle="tab">Details</a></li>
+            <li><a href="#looks" data-toggle="tab">Looks</a></li>
+            <li><a href="#finally" data-toggle="tab">Finally...</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="home">
+                <br />
+                <div class="form-group">
+                    <label for="isA">I am, we are...</label>
+                    <select name="isA" id="isA" class="form-control" size="<%=options.isA.length%>">
+                        <% _.each(options.isA, function(value, key) { %>
+                        <option value="<%=value.id%>"><%=value.humanised%></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="isFor">Looking for...</label>
+                    <select name="isFor" id="isFor" class="form-control" size="<%=options.isFor.length+1%>">
+                        <option value="">Rather not say</option>
+                        <% _.each(options.isFor, function(value, key) { %>
+                        <option value="<%=value.id%>"><%=value.humanised%></option>
+                        <% }) %>
+                    </select>
+                </div>
+            </div>
+            <div class="tab-pane" id="details">
+                <br />
+                <div class="form-group">
+                    <label for="height">Height</label>
+                    <select name="height" id="height" class="form-control">
+                        <% _.each(options.height, function(value, key) { %>
+                        <option value="<%=value.id%>"><%=value.humanised%></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="sex">Sex</label>
+                    <select name="sex" id="sex" class="form-control" size="<%=options.sex.length+1%>">
+                        <option value="">Rather not say</option>
+                        <% _.each(options.sex, function(value, key) { %>
+                        <option value="<%=value.id%>"><%=value.humanised%></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="education">Education Level</label>
+                    <select name="education" id="education" class="form-control" size="<%=options.education.length+1%>">
+                        <option value="">Rather not say</option>
+                        <% _.each(options.isA, function(value, key) { %>
+                        <option value="<%=value.id%>"><%=value.humanised%></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="religion">Religion</label>
+                    <select name="religion" id="religion" class="form-control" size="<%=options.religion.length+1%>">
+                        <option value="">Rather not say</option>
+                        <% _.each(options.religion, function(value, key) { %>
+                        <option value="<%=value.id%>"><%=value.humanised%></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="starsign">Starsign</label>
+                    <select name="starsign" id="starsign" class="form-control" size="<%=options.starsign.length%>">
+                        <% _.each(options.starsign, function(value, key) { %>
+                        <option value="<%=value.id%>"><%=value.humanised%></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="income">Financial Status</label>
+                    <select name="income" id="income" class="form-control"  size="<%=options.income.length+1%>">
+                        <option value="">Rather not say</option>
+                        <% _.each(options.income, function(value, key) { %>
+                        <option value="<%=value.id%>"><%=value.humanised%></option>
+                        <% }) %>
+                    </select>
+                </div>
+            </div>
+            <div class="tab-pane" id="looks">
+                <br />
+                <div class="form-group">
+                    <label for="hairColour">Natural Hair Colour</label>
+                    <select name="hairColour" id="hairColour" class="form-control" size="<%=options.hairColour.length+1%>">
+                        <option value="">Rather not say</option>
+                        <% _.each(options.hairColour, function(value, key) { %>
+                        <option value="<%=value.id%>"><%=value.humanised%></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="eyeColour">Natural Eye Colour</label>
+                    <select name="eyeColour" id="eyeColour" class="form-control" size="<%=options.eyeColour.length+1%>">
+                        <option value="">Rather not say</option>
+                        <% _.each(options.eyeColour, function(value, key) { %>
+                        <option value="<%=value.id%>"><%=value.humanised%></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="body">Body Type</label>
+                    <select name="body" id="body" class="form-control" size="<%=options.body.length+1%>">
+                        <option value="">Rather not say</option>
+                        <% _.each(options.body, function(value, key) { %>
+                        <option value="<%=value.id%>"><%=value.humanised%></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="ethnic">Ethnic Origins</label>
+                    <select name="ethnic" id="ethnic" class="form-control" size="<%=options.ethnic.length+1%>">
+                        <% _.each(options.ethnic, function(value, key) { %>
+                        <option value="<%=value.id%>"><%=value.humanised%></option>
+                        <% }) %>
+                    </select>
+                </div>
+            </div>
+            <div class="tab-pane" id="finally">
+                <br />
+                <div class="form-group">
+                    <label for="screening">Are you willing to take a health screening?</label>
+                    <select name="screening" id="screening" class="form-control">
+                        <option value="">Rather not say</option>
+                        <% _.each(options.screening, function(value, key) { %>
+                        <option value="<%=value.id%>"><%=value.humanised%></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="smoke">Do you smoke?</label>
+                    <select name="smoke" id="smoke" class="form-control">
+                        <option value="">Rather not say</option>
+                        <% _.each(options.smoke, function(value, key) { %>
+                        <option value="<%=value.id%>"><%=value.humanised%></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="drink">Have you ever had a problem with drink?</label>
+                    <select name="drink" id="drink" class="form-control">
+                        <option value="">Rather not say</option>
+                        <% _.each(options.drink, function(value, key) { %>
+                        <option value="<%=value.id%>"><%=value.humanised%></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-success">Update Profile</button>
+            </div>
+        </div>
+    </form>
+</script>
