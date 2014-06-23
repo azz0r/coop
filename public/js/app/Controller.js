@@ -34,6 +34,11 @@ define(["jquery","app/helper/user", "app/helper/underscore"],
           return MyApp.content.show(new View())
         })
       },
+      profiles: function() {
+        return require(["app/views/profiles/index"], function(View) {
+          return MyApp.content.show(new View())
+        })
+      },
 
 
       // images

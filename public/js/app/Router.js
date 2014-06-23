@@ -16,6 +16,7 @@ define(['marionette', 'app/Controller'], function(marionette, Controller) {
       signOut: 'signOut',
 
       messages: 'messages',
+      profiles: 'profiles',
 
       /* images */
       images: 'images',

@@ -1,15 +1,15 @@
 define([
-  "text!app/templates/images/index.html",
-
-  'app/views/partials/clear_filter',
-
-  'app/views/images/collection',
-
-  'app/views/images/partials/order_by',
-
-  'app/views/images/upload'
+  "text!app/templates/profiles/index.html",
+//  'app/views/partials/clear_filter',
+  'app/views/profiles/collection',
+//  'app/views/profiles/partials/order_by'
 ],
-  function(Template, ClearFilterView, CollectionView, OrderByView, CreateView) {
+  function(
+    Template,
+//    ClearFilterView,
+    CollectionView
+//    OrderByView
+    ) {
     "use strict"
 
     return Backbone.Marionette.Layout.extend({
@@ -22,11 +22,6 @@ define([
         clearFilter: '#clearFilter',
         orderBy: '#orderByContainer',
         collectionLatch: '#collectionLatch'
-      },
-
-
-      events: {
-        'click #create': 'onClickCreate'
       },
 
 
@@ -49,46 +44,38 @@ define([
       },
 
 
-      onClickCreate: function(ev) {
-
-        // stop it forwarding but still allow a href incase it fails
-        ev.preventDefault();
-
-        // send the add client page to the quickView
-        $.quickview({className: 'createImages', view: new CreateView({quickview: true})});
-      },
-
 
       getFilter: function() {
 
         // create our new filter object using jQuery picking the values
         var filter = {
           from: "0",
-          to: 100,
+          to: parseInt(100),
           order_by: $('#orderBy').val(),
           order_direction: $('#orderBy option:selected').data('direction')
         };
 
+        // passing it through a null stripper
+        filter = _.cleanNullFieldsFromObject(filter);
+
         // set the filter object to local storage (extended, not typical)
-        localStorage.setObject('imageFilter', filter);
+        localStorage.setObject('profileFilter', filter);
 
-        // return the filter after passing it through a null stripper
-        return _.cleanNullFieldsFromObject(filter);
+        return filter;
       },
 
 
-      renderClearFilter: function(options) {
-        this.clearFilter.show(new ClearFilterView(options));
-      },
+//      renderClearFilter: function(options) {
+////        this.clearFilter.show(new ClearFilterView(options));
+//      },
 
 
-      renderOrderBy: function(options) {
-        this.orderBy.show(new OrderByView(options));
-      },
-
+//      renderOrderBy: function(options) {
+////        this.orderBy.show(new OrderByView(options));
+//      },
 
       renderCollection: function(options) {
-        // render the image list
+        // render the post list
         this.collectionLatch.show(new CollectionView(options));
       },
 
@@ -96,20 +83,20 @@ define([
       onRender: function () {
 
         // do we need to over write the filter object from local storage?
-        var imageFilter = localStorage.getObject('imageFilter');
+        var profileFilter = localStorage.getObject('profileFilter');
 
         // if local storage isn't empty then over ride the filter with it
-        if (!_.isEmpty(imageFilter)) {
-          this.filter = imageFilter;
+        if (!_.isEmpty(profileFilter)) {
+          this.filter = profileFilter;
         } else {
           this.filter = this.getFilter();
         }
 
         //render the clear filter button
-        this.renderClearFilter({key: 'imageFilter'});
+//        this.renderClearFilter({key: 'profileFilter'});
 
-        // render order view
-        this.renderOrderBy(this.filter);
+        // ordering
+//        this.renderOrderBy(this.filter);
 
         // render the collection
         this.renderCollection(this.filter);

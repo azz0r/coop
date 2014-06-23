@@ -77,7 +77,6 @@ define(["app/views/partials/page", "app/views/partials/empty"],
 
       // set loading by appending to the latch
       setLoading: function() {
-        console.log($('.loadingLatch'))
         $('.loadingLatch').addClass('loadingActive');
       },
 
