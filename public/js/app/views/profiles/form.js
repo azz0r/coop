@@ -54,6 +54,7 @@ define([
       // convenience method to pass model object to the model instance
       setModel: function(model) {
 
+        // set the model
         this.model.set(model);
 
         // re render the page
@@ -99,7 +100,8 @@ define([
 
         $('.alert').addClass('hide')
 
-        this.model.save(data, {
+        this.model = new Model(data);
+        this.model.save({}, {
           success: function(response) {
             $.quickview({className: 'success', view: new SuccessView({
               message: "Your profile has successfully been saved"
@@ -145,8 +147,6 @@ define([
             drink: this.model.getDrinkOptions()
           }
         };
-
-        console.log(data);
 
         var html = _.template($(Template).html(), data);
         this.$el.html(html)

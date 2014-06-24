@@ -28,7 +28,7 @@
                     <label for="isA">I am, we are...</label>
                     <div class="is_a-error hide alert alert-danger"></div>
                     <select name="isA" id="isA" class="is_a form-control" size="<%=options.isA.length+1%>">
-                        <option value="" <%=_.isSelected('-', model.is_a)%>>Rather not say</option>
+                        <option value="-" <%=_.isSelected('-', model.is_a)%>>Rather not say</option>
                         <% _.each(options.isA, function(value, key) { %>
                         <option value="<%=value.id%>" <%=_.isSelected(value.id, model.is_a)%>><%=value.humanised%></option>
                         <% }) %>
@@ -38,7 +38,7 @@
                     <label for="isFor">Looking for...</label>
                     <div class="is_for-error hide alert alert-danger"></div>
                     <select name="isFor" id="isFor" class="is_for form-control" size="<%=options.isFor.length+1%>">
-                        <option value="" <%=_.isSelected('-', model.is_for)%>>Rather not say</option>
+                        <option value="-" <%=_.isSelected('-', model.is_for)%>>Rather not say</option>
                         <% _.each(options.isFor, function(value, key) { %>
                         <option value="<%=value.id%>" <%=_.isSelected(value.id, model.is_for)%>><%=value.humanised%></option>
                         <% }) %>
