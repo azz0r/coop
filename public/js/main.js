@@ -12,6 +12,8 @@ require.config({
     tpl: "libs/require/tpl",
     text: "libs/require/text",
 
+    json: 'libs/require/json',
+
     quickview: "libs/quickview/quickview",
 
     highcharts: "libs/highcharts/highcharts.min",

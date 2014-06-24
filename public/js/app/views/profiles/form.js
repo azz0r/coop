@@ -1,5 +1,11 @@
-define(["marionette", "text!app/templates/profiles/form.html", "app/models/profile"],
-  function(Marionette, Template, Model) {
+define([
+  "marionette",
+  "text!app/templates/profiles/form.html",
+  "app/models/profile",
+  "json!app/store/country.json",
+  "json!app/store/city.json"
+],
+  function(Marionette, Template, Model, Countries, Cities) {
     "use strict"
 
 
@@ -102,6 +108,10 @@ define(["marionette", "text!app/templates/profiles/form.html", "app/models/profi
         // create data object to pass to template
         var data = {
           model: this.model.toJSON(),
+          locations: {
+            country: Countries,
+            city: Cities
+          },
           options: {
             isA: this.model.getIsAOptions(),
             isFor: this.model.getIsForOptions(),
@@ -122,6 +132,7 @@ define(["marionette", "text!app/templates/profiles/form.html", "app/models/profi
           }
         };
 
+        console.log(data)
         var html = _.template($(Template).html(), data);
         this.$el.html(html)
 
