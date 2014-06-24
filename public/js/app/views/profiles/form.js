@@ -36,22 +36,7 @@ define(["marionette", "text!app/templates/profiles/form.html", "app/models/profi
           },
           // our call errored
           error: function(response) {
-
-            return that.setModel({
-              is_for: '-',
-              sex: '-',
-              education: '-',
-              income: '-',
-              religion: '-',
-              star_sign: '-',
-              hair_colour: '-',
-              eye_colour: '-',
-              body: '-',
-              ethnicity: '-',
-              screening: '-',
-              smoke: '-',
-              drink: '-'
-            });
+            return that.render();
           }
         });
       },
