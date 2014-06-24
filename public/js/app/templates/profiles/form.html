@@ -26,7 +26,8 @@
                 <div class="form-group">
                     <label for="isA">I am, we are...</label>
                     <div class="is_a-error hide alert alert-danger"></div>
-                    <select name="isA" id="isA" class="is_a form-control" size="<%=options.isA.length%>">
+                    <select name="isA" id="isA" class="is_a form-control" size="<%=options.isA.length+1%>">
+                        <option value="" <%=_.isSelected('-', model.is_a)%>>Rather not say</option>
                         <% _.each(options.isA, function(value, key) { %>
                         <option value="<%=value.id%>" <%=_.isSelected(value.id, model.is_a)%>><%=value.humanised%></option>
                         <% }) %>

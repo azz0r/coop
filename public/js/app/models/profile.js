@@ -7,6 +7,7 @@ define(["baseModel"],
 
 
       defaults: {
+        is_a: '-',
         is_for: '-',
         sex: '-',
         education: '-',
