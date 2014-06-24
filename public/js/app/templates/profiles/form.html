@@ -3,6 +3,7 @@
         <ul class="nav nav-tabs">
             <li class="active"><a href="#home" data-toggle="tab">Looking For</a></li>
             <li><a href="#details" data-toggle="tab">Details</a></li>
+            <li><a href="#location" data-toggle="tab">Location</a></li>
             <li><a href="#looks" data-toggle="tab">Looks</a></li>
             <li><a href="#finally" data-toggle="tab">Finally...</a></li>
         </ul>
@@ -78,7 +79,7 @@
                 <div class="form-group">
                     <label for="religion">Religion</label>
                     <div class="religion-error hide alert alert-danger"></div>
-                    <select name="religion" id="religion" class="religion form-control" size="<%=options.religion.length+1%>">
+                    <select name="religion" id="religion" class="religion form-control">
                         <option value="-" <%=_.isSelected('-', model.religion)%>>Rather not say</option>
                         <% _.each(options.religion, function(value, key) { %>
                         <option value="<%=value.id%>" <%=_.isSelected(value.id, model.religion, true)%>><%=value.humanised%></option>
@@ -88,7 +89,7 @@
                 <div class="form-group">
                     <label for="star_sign">Star sign</label>
                     <div class="star_sign-error hide alert alert-danger"></div>
-                    <select name="star_sign" id="star_sign" class="star_sign form-control" size="<%=options.starSign.length+1%>">
+                    <select name="star_sign" id="star_sign" class="star_sign form-control">
                         <option value="-" <%=_.isSelected('-', model.star_sign)%>>Rather not say</option>
                         <% _.each(options.starSign, function(value, key) { %>
                         <option value="<%=value.id%>" <%=_.isSelected(value.id, model.star_sign, true)%>><%=value.humanised%></option>
@@ -102,6 +103,39 @@
                         <option value="-" <%=_.isSelected('-', model.income)%>>Rather not say</option>
                         <% _.each(options.income, function(value, key) { %>
                         <option value="<%=value.id%>" <%=_.isSelected(value.id, model.income)%>><%=value.humanised%></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="occupation">Occupation</label>
+                    <div class="occupation-error hide alert alert-danger"></div>
+                    <select name="occupation" id="occupation" class="occupation form-control" size="5">
+                        <option value="-" <%=_.isSelected('-', model.occupation)%>>Rather not say</option>
+                        <% _.each(lists.occupation, function(value, key) { %>
+                        <option value="<%=value.id%>" <%=_.isSelected(value.id, model.occupation)%>><%=value.title%></option>
+                        <% }) %>
+                    </select>
+                </div>
+            </div>
+            <div class="tab-pane" id="location">
+                <br />
+                <div class="form-group">
+                    <label for="country_id">Country</label>
+                    <div class="country_id-error hide alert alert-danger"></div>
+                    <select name="country_id" id="country_id" class="country_id form-control" size="4">
+                        <option value="-" <%=_.isSelected('-', model.country_id)%>>Rather not say</option>
+                        <% _.each(lists.country, function(value, key) { %>
+                        <option value="<%=value.id%>" <%=_.isSelected(value.id, model.country_id)%>><%=value.title%></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="city_id">UK City</label>
+                    <div class="city_id-error hide alert alert-danger"></div>
+                    <select name="city_id" id="city_id" class="city_id form-control" size="4">
+                        <option value="-" <%=_.isSelected('-', model.city_id)%>>Rather not say</option>
+                        <% _.each(lists.city, function(value, key) { %>
+                        <option value="<%=value.id%>" <%=_.isSelected(value.id, model.city_id)%>><%=value.title%></option>
                         <% }) %>
                     </select>
                 </div>

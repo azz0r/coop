@@ -3,9 +3,12 @@ define([
   "text!app/templates/profiles/form.html",
   "app/models/profile",
   "json!app/store/country.json",
-  "json!app/store/city.json"
+  "json!app/store/city.json",
+  "json!app/store/occupation.json",
+  "app/views/partials/success",
+
 ],
-  function(Marionette, Template, Model, Countries, Cities) {
+  function(Marionette, Template, Model, Countries, Cities, Occupations, SuccessView) {
     "use strict"
 
 
@@ -68,16 +71,24 @@ define([
           is_a: this.$el.find('.is_a').val(),
           is_for: this.$el.find('.is_for').val(),
           height: this.$el.find('.height').val(),
+
+          city_id: this.$el.find('.city_id').val(),
+          country_id: this.$el.find('.country_id').val(),
+
           sex: this.$el.find('.sex').val(),
           age: this.$el.find('.age').val(),
+
+          occupation: this.$el.find('.occupation').val(),
           education: this.$el.find('.education').val(),
           religion: this.$el.find('.religion').val(),
           star_sign: this.$el.find('.star_sign').val(),
           income: this.$el.find('.income').val(),
+
           hair_colour: this.$el.find('.hair_colour').val(),
           eye_colour: this.$el.find('.eye_colour').val(),
           body: this.$el.find('.body').val(),
           ethnicity: this.$el.find('.ethnicity').val(),
+
           screening: this.$el.find('.screening').val(),
           smoke: this.$el.find('.smoke').val(),
           drink: this.$el.find('.drink').val(),
@@ -90,7 +101,9 @@ define([
 
         this.model.save(data, {
           success: function(response) {
-            alert('SUCCESS');
+            $.quickview({className: 'success', view: new SuccessView({
+              message: "Your profile has successfully been saved"
+            })});
           },
           error: function(model, response) {
             var responseObject = JSON && JSON.parse(response.responseText) || $.parseJSON(response.responseText);
@@ -108,9 +121,10 @@ define([
         // create data object to pass to template
         var data = {
           model: this.model.toJSON(),
-          locations: {
+          lists: {
             country: Countries,
-            city: Cities
+            city: Cities,
+            occupation: Occupations
           },
           options: {
             isA: this.model.getIsAOptions(),
@@ -132,7 +146,8 @@ define([
           }
         };
 
-        console.log(data)
+        console.log(data);
+
         var html = _.template($(Template).html(), data);
         this.$el.html(html)
 
