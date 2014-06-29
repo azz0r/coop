@@ -53,6 +53,8 @@ require([
   "/js/test/tests/login.js",
   "/js/test/tests/profiles.js",
   "/js/test/tests/users.js",
+  "/js/test/tests/images.js",
+  "/js/test/tests/messages.js",
 ],
   function(){
 //    localStorage.clear();
