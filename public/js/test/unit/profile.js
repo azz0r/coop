@@ -1,12 +1,14 @@
 define(['app/collections/profiles'],
-  function( Collection) {
+  function(Collection) {
 
     module("Collection");
 
     asyncTest("fetch", 2, function(){
+
       var profiles = new Collection();
       var options = {
         error: function() {
+          console.log('error');
           ok(false);
           start();
         },

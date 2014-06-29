@@ -25,15 +25,36 @@ require.config({
     baseModel: "app/models/base",
     baseCollection: "app/collections/base",
     baseCollectionView: "app/views/collection"
+  },
+  shim: {
+    jquery: {
+      exports: "jQuery"
+    },
+    underscore: {
+      exports: "_"
+    },
+    backbone: {
+      deps: ["jquery", "underscore"],
+      exports: "Backbone"
+    },
+    marionette: {
+      deps: ["jquery", "underscore", "backbone"],
+      exports: "Marionette"
+    },
+    bootstrap: ["jquery"]
   }
-});
+})
+
 
 
 require([
-  "underscore",
-  "backbone",
-  "marionette",
-  "/js/test/unit/client.js",
+//  "underscore",
+//  "backbone",
+//  "marionette",
+//  "baseModel",
+//  "baseCollection",
+//  "baseCollectionView",
+  "/js/test/unit/profile.js",
 //  "/js/test/unit/localstorage.js",
 //  "/js/test/unit/selection.js",
 //  "/js/test/unit/client.js",
@@ -41,6 +62,11 @@ require([
 //  "/js/test/unit/post-create.js",
 //  "/js/test/unit/post.js",
 //  "/js/test/unit/analytics-overview.js"
-  ], function(){
-    QUnit.start();
+], function(){
+  $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
+    options.url = "/proxy.php/" + options.url;
+    return;
+  });
+  Backbone.emulateJSON = true;
+  QUnit.start();
 });
