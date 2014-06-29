@@ -8,7 +8,6 @@ define(['app/collections/users'],
       var users = new Collection();
       var options = {
         error: function() {
-          console.log('error');
           ok(false);
           start();
         },

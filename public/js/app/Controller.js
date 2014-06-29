@@ -73,9 +73,9 @@ define(["jquery","app/helper/user", "app/helper/underscore"],
           url: "signout",
           data: {}
         }).complete(function(data) {
-            window.location.hash = '';
-            return location.reload(true);
-          })
+          window.location.hash = '';
+          return location.reload(true);
+        })
       },
       updatePassword: function() {
         userCheck.authenticate("app/views/users/password");

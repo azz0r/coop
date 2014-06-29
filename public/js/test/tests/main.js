@@ -47,13 +47,19 @@ require.config({
 
 
 require([
+  "/js/app/helper/underscore.js",
+  "/js/app/helper/url.js",
+  "/js/app/helper/user.js",
+  "/js/test/tests/login.js",
   "/js/test/tests/profiles.js",
-  "/js/test/tests/users.js"
-], function(){
-  $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
-    options.url = "/proxy.php/" + options.url;
-    return;
+  "/js/test/tests/users.js",
+],
+  function(){
+//    localStorage.clear();
+    $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
+      options.url = "/proxy.php/" + options.url;
+      return;
+    });
+    Backbone.emulateJSON = true;
+    QUnit.start();
   });
-  Backbone.emulateJSON = true;
-  QUnit.start();
-});
