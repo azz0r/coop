@@ -47,7 +47,8 @@ require.config({
 
 
 require([
-  "/js/test/tests/profile.js"
+  "/js/test/tests/profiles.js",
+  "/js/test/tests/users.js"
 ], function(){
   $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
     options.url = "/proxy.php/" + options.url;

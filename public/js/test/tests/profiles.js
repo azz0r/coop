@@ -3,7 +3,7 @@ define(['app/collections/profiles'],
 
     module("Collection");
 
-    asyncTest("fetch", 2, function(){
+    asyncTest("fetch profiles", 2, function(){
 
       var profiles = new Collection();
       var options = {
