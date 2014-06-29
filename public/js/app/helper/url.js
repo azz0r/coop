@@ -1,4 +1,4 @@
-define(["backbone","underscore"],
+define(["backbone", "underscore"],
   function(Backbone, _) {
 
 
