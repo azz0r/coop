@@ -46,22 +46,8 @@ require.config({
 })
 
 
-
 require([
-//  "underscore",
-//  "backbone",
-//  "marionette",
-//  "baseModel",
-//  "baseCollection",
-//  "baseCollectionView",
-  "/js/test/unit/profile.js",
-//  "/js/test/unit/localstorage.js",
-//  "/js/test/unit/selection.js",
-//  "/js/test/unit/client.js",
-//  "/js/test/unit/asset.js",
-//  "/js/test/unit/post-create.js",
-//  "/js/test/unit/post.js",
-//  "/js/test/unit/analytics-overview.js"
+  "/js/test/tests/profile.js"
 ], function(){
   $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
     options.url = "/proxy.php/" + options.url;
