@@ -55,6 +55,7 @@ require([
   "/js/test/tests/signin.js",
   "/js/test/tests/profiles.js",
   "/js/test/tests/users.js",
+  "/js/test/tests/users/model.js",
   "/js/test/tests/images.js",
   "/js/test/tests/messages.js",
 ],
