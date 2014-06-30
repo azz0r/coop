@@ -19,6 +19,4 @@ define(['app/collections/messages/conversations'],
       };
       messages.fetch(options);
     });
-
-
   });

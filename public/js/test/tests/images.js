@@ -19,6 +19,4 @@ define(['app/collections/images'],
       };
       images.fetch(options);
     });
-
-
   });

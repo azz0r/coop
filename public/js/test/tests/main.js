@@ -50,7 +50,9 @@ require([
   "/js/app/helper/underscore.js",
   "/js/app/helper/url.js",
   "/js/app/helper/user.js",
-  "/js/test/tests/login.js",
+
+  "/js/test/tests/signout.js",
+  "/js/test/tests/signin.js",
   "/js/test/tests/profiles.js",
   "/js/test/tests/users.js",
   "/js/test/tests/images.js",

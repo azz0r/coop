@@ -19,6 +19,4 @@ define(['app/collections/users'],
       };
       users.fetch(options);
     });
-
-
   });

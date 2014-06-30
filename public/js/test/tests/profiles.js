@@ -20,6 +20,4 @@ define(['app/collections/profiles'],
       };
       profiles.fetch(options);
     });
-
-
   });

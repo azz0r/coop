@@ -3,7 +3,7 @@ define([],
 
     module("Account");
 
-    asyncTest("login", 2, function(){
+    asyncTest("signin", 2, function(){
 
       $.ajax({
         type: "POST",
@@ -17,10 +17,6 @@ define([],
         ok(_.isObject(response.user), 'response user is an object');
         ok(response.login, 'response login value: '+response.login);
         start();
-
       })
-
     });
-
-
   });
