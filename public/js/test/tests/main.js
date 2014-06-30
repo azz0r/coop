@@ -58,6 +58,7 @@ require([
   "/js/test/tests/users.js",
   "/js/test/tests/users/model.js",
   "/js/test/tests/images.js",
+  "/js/test/tests/images/model.js",
   "/js/test/tests/messages.js",
 ],
   function(){
