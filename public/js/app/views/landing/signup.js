@@ -1,4 +1,4 @@
-define(["marionette", "text!app/templates/hive/signup.html", "text!app/templates/hive/signup-success.html"],
+define(["marionette", "text!app/templates/landing/signup.html", "text!app/templates/landing/signup-success.html"],
   function (Marionette, Template, SuccessTemplate) {
     "use strict";
     return Backbone.Marionette.ItemView.extend({

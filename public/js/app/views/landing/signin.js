@@ -1,6 +1,6 @@
 define([
   "marionette",
-  "text!app/templates/hive/signin.html",
+  "text!app/templates/landing/signin.html",
   "app/models/user",
 ],
   function (

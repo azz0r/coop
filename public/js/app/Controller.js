@@ -3,7 +3,7 @@ define(["jquery","app/helper/user", "app/helper/underscore"],
     "use strict"
     return {
       landing: function() {
-        return require(["app/views/hive/landing"], function(View) {
+        return require(["app/views/landing/index"], function(View) {
           return MyApp.content.show(new View())
         })
       },

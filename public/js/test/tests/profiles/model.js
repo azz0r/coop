@@ -12,7 +12,6 @@ define(['app/models/profile'],
           start();
         },
         success: function(profile) {
-          console.log(profile);
           ok(typeof(profile) === 'object', 'json response is an object');
           ok(typeof(profile.attributes._id) === 'object', 'profile id is a mongo id object');
           start();

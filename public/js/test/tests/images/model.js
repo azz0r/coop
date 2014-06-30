@@ -12,7 +12,6 @@ define(['app/models/image'],
           start();
         },
         success: function(image) {
-          console.log(image);
           ok(typeof(image) === 'object', 'json response is an object');
           ok(typeof(image.attributes._id) === 'object', 'image id is a mongo id object');
           start();

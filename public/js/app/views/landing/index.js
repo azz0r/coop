@@ -1,8 +1,8 @@
 define([
-  'app/views/hive/signup',
-  'app/views/hive/signin',
-  'app/views/hive/signup-success',
-  "tpl!app/templates/hive/landing.html"
+  'app/views/landing/signup',
+  'app/views/landing/signin',
+  'app/views/landing/signup-success',
+  "tpl!app/templates/landing/index.html"
 ],
   function (SignupView,
             SigninView,
