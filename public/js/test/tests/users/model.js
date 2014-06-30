@@ -12,7 +12,6 @@ define(['app/models/user'],
           start();
         },
         success: function(user) {
-          console.log(user);
           ok(typeof(user) === 'object', 'json response is an object');
           ok(typeof(user.attributes._id) === 'object', 'user id is a mongo id object');
           start();

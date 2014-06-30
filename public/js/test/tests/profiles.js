@@ -13,6 +13,9 @@ define(['app/collections/profiles'],
           start();
         },
         success: function(profiles) {
+          if (profiles.models[0].attributes._id.$id) {
+            localStorage.setItem('test.profile.id', profiles.models[0].attributes._id.$id);
+          }
           ok(typeof(profiles) === 'object', 'json response is an object');
           ok(profiles.length > 0, 'profiles is not empty');
           start();
