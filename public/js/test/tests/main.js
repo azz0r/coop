@@ -52,11 +52,15 @@ require([
   "/js/app/helper/user.js",
 
   "/js/test/tests/signout.js",
+  "/js/test/tests/users/model.js",
+
+
   "/js/test/tests/signin.js",
   "/js/test/tests/profiles.js",
   "/js/test/tests/profiles/model.js",
   "/js/test/tests/users.js",
-  "/js/test/tests/users/model.js",
+  "/js/test/tests/users/create-fail.js",
+  "/js/test/tests/users/create-success.js",
   "/js/test/tests/images.js",
   "/js/test/tests/images/model.js",
   "/js/test/tests/messages.js",
