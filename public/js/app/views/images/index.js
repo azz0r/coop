@@ -58,12 +58,11 @@ define([
         // create our new filter object using jQuery picking the values
         var filter = {
           from: "0",
-          to: 100
+          to: 100,
+          user: _.getUser()._id.$id
         };
 
-        // set the filter object to local storage (extended, not typical)
-        localStorage.setObject('imageFilter', filter);
-
+        console.log(filter);
         // return the filter after passing it through a null stripper
         return _.cleanNullFieldsFromObject(filter);
       },
@@ -77,15 +76,7 @@ define([
 
       onRender: function () {
 
-        // do we need to over write the filter object from local storage?
-        var imageFilter = localStorage.getObject('imageFilter');
-
-        // if local storage isn't empty then over ride the filter with it
-        if (!_.isEmpty(imageFilter)) {
-          this.filter = imageFilter;
-        } else {
-          this.filter = this.getFilter();
-        }
+        this.filter = this.getFilter();
 
         // render the collection
         this.renderCollection(this.filter);
