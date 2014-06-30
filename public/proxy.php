@@ -377,6 +377,7 @@ class ProxyController
                 echo json_encode(array('user' => $login->user, 'login' => true));
                 exit;
             } else {
+                header("HTTP/1.0 500 Internal Server Error");
                 echo json_encode(array('user' => false, 'login' => false));
                 exit;
             };
