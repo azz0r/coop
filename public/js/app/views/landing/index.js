@@ -26,6 +26,9 @@ define([
         MyApp.vent.on('signUp:successful', function(options){
           that.renderSignupSuccessful(options)
         })
+        MyApp.vent.on('signIn:successful', function(options){
+          that.render();
+        })
       },
       renderSignin: function(options) {
         this.leftColumn.show(new SignupView(options));
