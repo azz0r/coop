@@ -21,7 +21,7 @@ define(["app/views/partials/page", "app/views/partials/empty"],
       triggerCollection: function() {
 
         // empty the collection div of any content
-        $(this.itemViewContainer).html(' ');
+        $(this.childViewContainer).html(' ');
 
         // set things loading
         this.setLoading();

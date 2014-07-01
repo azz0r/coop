@@ -8,7 +8,7 @@ define([
   function(Template, CollectionView, CreateView) {
     "use strict"
 
-    return Backbone.Marionette.Layout.extend({
+    return Backbone.Marionette.LayoutView.extend({
 
 
       template: Template,

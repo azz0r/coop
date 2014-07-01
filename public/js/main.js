@@ -2,6 +2,8 @@ require.config({
   paths: {
     backbone: "libs/backbone/backbone",
     marionette: "libs/backbone/marionette",
+    "backbone.babysitter": "libs/backbone/babysitter/backbone.babysitter.min",
+    "backbone.wreqr": "libs/backbone/wreqr/backbone.wreqr.min",
     modelBinder: "libs/backbone/modelBinder",
     queryParams: "libs/backbone/queryParams",
     underscore: "libs/underscore/underscore-min",
@@ -11,13 +13,8 @@ require.config({
     bootstrap: "libs/bootstrap/bootstrap",
     tpl: "libs/require/tpl",
     text: "libs/require/text",
-
     json: 'libs/require/json',
-
     quickview: "libs/quickview/quickview",
-
-    highcharts: "libs/highcharts/highcharts.min",
-    monthpicker: "libs/monthpicker/jquery.ui.monthpicker",
 
     baseModel: "app/models/base",
     baseCollection: "app/collections/base",

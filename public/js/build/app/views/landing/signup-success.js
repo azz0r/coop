@@ -1,0 +1,1 @@
+define(["marionette","underscore","text!app/templates/landing/signup-success.html","jquery"],function(e,t,n,r){return Backbone.Marionette.ItemView.extend({template:n})});

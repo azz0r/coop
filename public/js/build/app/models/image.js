@@ -1,0 +1,1 @@
+define(["baseModel"],function(e){return e.extend({urlRoot:"image",getOrderByOptions:function(){return[{id:"created",humanised:"Created"},{id:"updated",humanised:"Updated"}]}})});

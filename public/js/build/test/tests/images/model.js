@@ -1,0 +1,1 @@
+define(["app/models/image"],function(e){module("Model"),asyncTest("fetch image",2,function(){var t=new e({id:localStorage.getItem("test.image.id")}),n={error:function(){ok(!1),start()},success:function(e){ok(typeof e=="object","json response is an object"),ok(typeof e.attributes._id=="object","image id is a mongo id object"),start()}};t.fetch(n)})});

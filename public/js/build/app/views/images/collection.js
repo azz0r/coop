@@ -1,0 +1,1 @@
+define(["text!app/templates/images/collection.html","app/collections/images","app/views/images/item","baseCollectionView"],function(e,t,n,r){"use strict";return r.extend({template:e,childView:n,childViewContainer:"#imagesBody",collection:new t,pageCollection:new t})});

@@ -1,0 +1,1 @@
+define(["marionette","tpl!app/templates/general/aboutUs.html"],function(e,t){return Backbone.Marionette.ItemView.extend({template:t()})});

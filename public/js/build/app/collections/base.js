@@ -1,0 +1,1 @@
+define(["backbone","app/helper/url.js"],function(e,t){return e.Collection.extend({})});

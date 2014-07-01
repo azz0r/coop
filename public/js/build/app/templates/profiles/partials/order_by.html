@@ -1,0 +1,12 @@
+<script type="text/template" id="profilesPartialsOrderByTemplate">
+    <label for="orderBy">Order By</label>
+
+    <select class="orderBy" data-type="orderBy" id="orderBy">
+        <option value="">Order By</option>
+
+        <% _.each(values, function(val, key) { %>
+        <option value="<%=val.id%>" data-direction="DESC" <% if (order_by == val.id && order_direction == "DESC") { %> selected="selected"<% } %>><%=val.humanised%> (Newest)</option>
+        <option value="<%=val.id%>" data-direction="ASC" <% if (order_by == val.id && order_direction == "ASC") { %> selected="selected"<% } %>><%=val.humanised%> (Oldest)</option>
+        <% }); %>
+    </select>
+</script>

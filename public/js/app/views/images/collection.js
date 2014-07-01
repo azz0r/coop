@@ -10,8 +10,8 @@ define([
 
 
       template: Template,
-      itemView: Item,
-      itemViewContainer: "#imagesBody",
+      childView: Item,
+      childViewContainer: "#imagesBody",
       collection: new Collection(),
       pageCollection: new Collection()
 

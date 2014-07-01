@@ -1,0 +1,1 @@
+define(["baseCollection","app/models/message"],function(e,t){return e.extend({model:t,url:"message/conversation"})});

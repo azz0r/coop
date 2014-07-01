@@ -1,0 +1,1 @@
+define(["marionette","text!app/templates/images/item.html","app/views/images/quickview"],function(e,t,n){"use strict";return Backbone.Marionette.ItemView.extend({template:t,tagName:"div",className:"image col-xs-6 col-sm-3",events:{"click img":"onClickImage"},onClickImage:function(){$.quickview({className:"image",view:new n({model:this.model})})}})});

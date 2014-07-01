@@ -1,0 +1,1 @@
+define(["marionette","text!app/templates/profiles/item.html","app/models/profile"],function(e,t,n){"use strict";return Backbone.Marionette.ItemView.extend({template:t,tagName:"div",serializeData:function(){return{model:this.model.toJSON()}}})});

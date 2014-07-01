@@ -1,0 +1,1 @@
+define(["text!app/templates/profiles/collection.html","app/collections/profiles","app/views/profiles/item","baseCollectionView"],function(e,t,n,r){"use strict";return r.extend({template:e,childView:n,childViewContainer:"#collectionBody",collection:new t,pageCollection:new t})});

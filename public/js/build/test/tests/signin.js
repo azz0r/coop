@@ -1,0 +1,1 @@
+define([],function(){module("Account"),asyncTest("signin",2,function(){$.ajax({type:"POST",url:"signin",async:!1,data:"user%5Bemail%5D=user.one%40gmail.com&user%5Bpassword%5D=admin123"}).complete(function(e){var t=JSON.parse(e.responseText);ok(_.isObject(t.user),"response user is an object"),ok(t.login,"response login value: "+t.login),start()})})});

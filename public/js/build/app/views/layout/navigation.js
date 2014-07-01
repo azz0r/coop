@@ -1,0 +1,1 @@
+define(["marionette","text!app/templates/layout/navigation.html"],function(e,t){return e.ItemView.extend({template:t,onRender:function(){var e=this;MyApp.vent.on("signIn:successful",function(){e.render()}),MyApp.vent.on("signOut:successful",function(){e.render()})}})});

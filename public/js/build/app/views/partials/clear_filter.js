@@ -1,0 +1,1 @@
+define(["marionette","text!app/templates/partials/clear_filter.html"],function(e,t){"use strict";return Backbone.Marionette.ItemView.extend({template:t,tagName:"span",events:{"click #clear":"onClickClearFilter"},initialize:function(e){this.key=_.isEmpty(e)?"":e.key},onClickClearFilter:function(){localStorage.removeItem(this.key),MyApp.vent.trigger("filter:clear")}})});

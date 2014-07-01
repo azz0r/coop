@@ -1,0 +1,227 @@
+<script type="text/template" id="profilesFormTemplate">
+    <form role="form">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#home" data-toggle="tab">Looking For</a></li>
+            <li><a href="#details" data-toggle="tab">Details</a></li>
+            <li><a href="#location" data-toggle="tab">Location</a></li>
+            <li><a href="#looks" data-toggle="tab">Looks</a></li>
+            <li><a href="#finally" data-toggle="tab">Finally...</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="home">
+                <br />
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <div class="name-error hide alert alert-danger"></div>
+                    <input name="name" type="text" id="name" value="<%=model.name%>" class="name form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <div class="age-error hide alert alert-danger"></div>
+                    <select name="age" id="age" class="age form-control">
+                        <% _.each(options.age, function(value, key) { %>
+                        <option value="<%=value%>" <%=_.isSelected(value, model.age)%>><%=value%></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="isA">I am, we are...</label>
+                    <div class="is_a-error hide alert alert-danger"></div>
+                    <select name="isA" id="isA" class="is_a form-control" size="<%=options.isA.length+1%>">
+                        <option value="-" <%=_.isSelected('-', model.is_a)%>>Rather not say</option>
+                        <% _.each(options.isA, function(value, key) { %>
+                        <option value="<%=value.id%>" <%=_.isSelected(value.id, model.is_a)%>><%=value.humanised%></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="isFor">Looking for...</label>
+                    <div class="is_for-error hide alert alert-danger"></div>
+                    <select name="isFor" id="isFor" class="is_for form-control" size="<%=options.isFor.length+1%>">
+                        <option value="-" <%=_.isSelected('-', model.is_for)%>>Rather not say</option>
+                        <% _.each(options.isFor, function(value, key) { %>
+                        <option value="<%=value.id%>" <%=_.isSelected(value.id, model.is_for)%>><%=value.humanised%></option>
+                        <% }) %>
+                    </select>
+                </div>
+            </div>
+            <div class="tab-pane" id="details">
+                <br />
+                <div class="form-group">
+                    <label for="height">Height</label>
+                    <div class="height-error hide alert alert-danger"></div>
+                    <select name="height" id="height" class="height form-control">
+                        <% _.each(options.height, function(value, key) { %>
+                        <option value="<%=value.id%>" <%=_.isSelected(value.id, model.height)%>><%=value.humanised%></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="sex">Sex</label>
+                    <div class="sex-error hide alert alert-danger"></div>
+                    <select name="sex" id="sex" class="sex form-control" size="<%=options.sex.length+1%>">
+                        <option value="-" <%=_.isSelected('-', model.sex)%>>Rather not say</option>
+                        <% _.each(options.sex, function(value, key) { %>
+                        <option value="<%=value.id%>" <%=_.isSelected(value.id, model.sex)%>><%=value.humanised%></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="education">Education Level</label>
+                    <div class="education-error hide alert alert-danger"></div>
+                    <select name="education" id="education" class="education form-control" size="<%=options.education.length+1%>">
+                        <option value="-" <%=_.isSelected('-', model.education)%>>Rather not say</option>
+                        <% _.each(options.education, function(value, key) { %>
+                        <option value="<%=value.id%>" <%=_.isSelected(value.id, model.education)%>><%=value.humanised%></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="religion">Religion</label>
+                    <div class="religion-error hide alert alert-danger"></div>
+                    <select name="religion" id="religion" class="religion form-control">
+                        <option value="-" <%=_.isSelected('-', model.religion)%>>Rather not say</option>
+                        <% _.each(options.religion, function(value, key) { %>
+                        <option value="<%=value.id%>" <%=_.isSelected(value.id, model.religion, true)%>><%=value.humanised%></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="star_sign">Star sign</label>
+                    <div class="star_sign-error hide alert alert-danger"></div>
+                    <select name="star_sign" id="star_sign" class="star_sign form-control">
+                        <option value="-" <%=_.isSelected('-', model.star_sign)%>>Rather not say</option>
+                        <% _.each(options.starSign, function(value, key) { %>
+                        <option value="<%=value.id%>" <%=_.isSelected(value.id, model.star_sign, true)%>><%=value.humanised%></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="income">Financial Status</label>
+                    <div class="income-error hide alert alert-danger"></div>
+                    <select name="income" id="income" class="income form-control" size="<%=options.income.length+1%>">
+                        <option value="-" <%=_.isSelected('-', model.income)%>>Rather not say</option>
+                        <% _.each(options.income, function(value, key) { %>
+                        <option value="<%=value.id%>" <%=_.isSelected(value.id, model.income)%>><%=value.humanised%></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="occupation">Occupation</label>
+                    <div class="occupation-error hide alert alert-danger"></div>
+                    <select name="occupation" id="occupation" class="occupation form-control" size="5">
+                        <option value="-" <%=_.isSelected('-', model.occupation)%>>Rather not say</option>
+                        <% _.each(lists.occupation, function(value, key) { %>
+                        <option value="<%=value.id%>" <%=_.isSelected(value.id, model.occupation)%>><%=value.title%></option>
+                        <% }) %>
+                    </select>
+                </div>
+            </div>
+            <div class="tab-pane" id="location">
+                <br />
+                <div class="form-group">
+                    <label for="country_id">Country</label>
+                    <div class="country_id-error hide alert alert-danger"></div>
+                    <select name="country_id" id="country_id" class="country_id form-control" size="4">
+                        <option value="-" <%=_.isSelected('-', model.country_id)%>>Rather not say</option>
+                        <% _.each(lists.country, function(value, key) { %>
+                        <option value="<%=value.id%>" <%=_.isSelected(value.id, model.country_id)%>><%=value.title%></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="city_id">UK City</label>
+                    <div class="city_id-error hide alert alert-danger"></div>
+                    <select name="city_id" id="city_id" class="city_id form-control" size="4">
+                        <option value="-" <%=_.isSelected('-', model.city_id)%>>Rather not say</option>
+                        <% _.each(lists.city, function(value, key) { %>
+                        <option value="<%=value.id%>" <%=_.isSelected(value.id, model.city_id)%>><%=value.title%></option>
+                        <% }) %>
+                    </select>
+                </div>
+            </div>
+            <div class="tab-pane" id="looks">
+                <br />
+                <div class="form-group">
+                    <label for="hairColour">Natural Hair Colour</label>
+                    <div class="hair_colour-error hide alert alert-danger"></div>
+                    <select name="hairColour" id="hairColour" class="hair_colour form-control" size="<%=options.hairColour.length+1%>">
+                        <option value="-" <%=_.isSelected('-', model.hair_colour)%>>Rather not say</option>
+                        <% _.each(options.hairColour, function(value, key) { %>
+                        <option value="<%=value.id%>" <%=_.isSelected(value.id, model.hair_colour)%>><%=value.humanised%></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="eyeColour">Natural Eye Colour</label>
+                    <div class="eye_colour-error hide alert alert-danger"></div>
+                    <select name="eyeColour" id="eyeColour" class="eye_colour form-control" size="<%=options.eyeColour.length+1%>">
+                        <option value="-" <%=_.isSelected('-', model.eye_colour)%>>Rather not say</option>
+                        <% _.each(options.eyeColour, function(value, key) { %>
+                        <option value="<%=value.id%>" <%=_.isSelected(value.id, model.eye_colour)%>><%=value.humanised%></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="body">Body Type</label>
+                    <div class="body-error hide alert alert-danger"></div>
+                    <select name="body" id="body" class="body form-control" size="<%=options.body.length+1%>">
+                        <option value="-" <%=_.isSelected('-', model.body)%>>Rather not say</option>
+                        <% _.each(options.body, function(value, key) { %>
+                        <option value="<%=value.id%>" <%=_.isSelected(value.id, model.body)%>><%=value.humanised%></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="ethnicity">Ethnic Origins</label>
+                    <div class="ethnicity-error hide alert alert-danger"></div>
+                    <select name="ethnicity" id="ethnicity" class="ethnicity form-control" size="<%=options.ethnicity.length+1%>">
+                        <option value="-" <%=_.isSelected('-', model.ethnicity)%>>Rather not say</option>
+                        <% _.each(options.ethnicity, function(value, key) { %>
+                        <option value="<%=value.id%>" <%=_.isSelected(value.id, model.ethnicity)%>><%=value.humanised%></option>
+                        <% }) %>
+                    </select>
+                </div>
+            </div>
+            <div class="tab-pane" id="finally">
+                <br />
+                <div class="form-group">
+                    <label for="screening">Are you willing to take a health screening?</label>
+                    <div class="screening-error hide alert alert-danger"></div>
+                    <select name="screening" id="screening" class="screening form-control">
+                        <option value="-" <%=_.isSelected('-', model.screening)%>>Rather not say</option>
+                        <% _.each(options.screening, function(value, key) { %>
+                        <option value="<%=value.id%>" <%=_.isSelected(value.id, model.screening)%>><%=value.humanised%></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="smoke">Do you smoke?</label>
+                    <div class="smoke-error hide alert alert-danger"></div>
+                    <select name="smoke" id="smoke" class="smoke form-control">
+                        <option value="-" <%=_.isSelected('-', model.smoke)%>>Rather not say</option>
+                        <% _.each(options.smoke, function(value, key) { %>
+                        <option value="<%=value.id%>" <%=_.isSelected(value.id, model.smoke)%>><%=value.humanised%></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="drink">Have you ever had a problem with drink?</label>
+                    <div class="drink-error hide alert alert-danger"></div>
+                    <select name="drink" id="drink" class="drink form-control">
+                        <option value="-" <%=_.isSelected('-', model.drink)%>>Rather not say</option>
+                        <% _.each(options.drink, function(value, key) { %>
+                        <option value="<%=value.id%>" <%=_.isSelected(value.id, model.drink)%>><%=value.humanised%></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="blurb">This box can be used to really sell yourself. You may to enter things that would catch a matches eye. Diploma information? Family History? Health Information?</label>
+                    <div class="blurb-error hide alert alert-danger"></div>
+                    <textarea id="blurb" name="blurb" rows="10" class="blurb form-control"><%=model.blurb%></textarea>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success update">Update Profile</button>
+    </form>
+</script>

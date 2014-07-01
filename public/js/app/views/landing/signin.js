@@ -18,7 +18,7 @@ define([
 
 
       template: Template,
-      itemViewContainer: "body",
+      childViewContainer: "body",
 
 
       pressedEnter: function(e) {

@@ -1,0 +1,1 @@
+define(["marionette","text!app/templates/partials/empty.html"],function(e,t){return Backbone.Marionette.ItemView.extend({template:t,className:"alert alert-empty"})});

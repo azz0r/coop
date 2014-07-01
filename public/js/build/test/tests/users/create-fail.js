@@ -1,0 +1,1 @@
+define(["app/models/user"],function(e){module("Model"),asyncTest("fail at creating user",1,function(){var t="",n={username:"John Doe"},r=new e(n),i=r.save({},{success:function(){ok(!1,"fail at creating a user without enough data")},error:function(){ok(!0,"fail at creating a user without enough data")},complete:function(){start()}})})});

@@ -8,7 +8,7 @@ define(["marionette", "underscore", "text!app/templates/users/password.html", "a
       "click #update": "updatePass"
     },
     template: Template,
-    itemViewContainer: "body",
+    childViewContainer: "body",
 
 
     updatePass: function(ev) {

@@ -1,0 +1,1 @@
+define(["jquery"],function(e){return{authenticate:function(e,t){var n=localStorage.getObject("user");return n==null?!1:require([e],function(e){return MyApp.content.show(new e(t))})}}});

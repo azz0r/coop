@@ -10,7 +10,7 @@ define([
             template) {
     "use strict"
     var AppLayout
-    AppLayout = Backbone.Marionette.Layout.extend({
+    AppLayout = Backbone.Marionette.LayoutView.extend({
       template: template(),
       regions: {
         topColumn: '#top',

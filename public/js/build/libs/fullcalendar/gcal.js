@@ -1,0 +1,7 @@
+/*!
+ * FullCalendar v2.0.0-beta2 Google Calendar Plugin
+ * Docs & License: http://arshaw.com/fullcalendar/
+ * (c) 2013 Adam Shaw
+ */
+
+(function(e){typeof define=="function"&&define.amd?define(["jquery"],e):e(jQuery)})(function(e){function r(t,r,i,s){var o=t.success,u=e.extend({},t.data||{},{singleevents:!0,"max-results":9999});return e.extend({},t,{url:t.url.replace(/\/basic$/,"/full")+"?alt=json-in-script&callback=?",dataType:"jsonp",data:u,timezoneParam:"ctz",startParam:"start-min",endParam:"start-max",success:function(t){var r=[];t.feed.entry&&e.each(t.feed.entry,function(t,n){var i;e.each(n.link,function(e,t){t.type=="text/html"&&(i=t.href,s&&s!="local"&&(i+=(i.indexOf("?")==-1?"?":"&")+"ctz="+encodeURIComponent(s)))}),r.push({id:n.gCal$uid.value,title:n.title.$t,start:n.gd$when[0].startTime,end:n.gd$when[0].endTime,url:i,location:n.gd$where[0].valueString,description:n.content.$t})});var i=[r].concat(Array.prototype.slice.call(arguments,1)),u=n(o,this,i);return e.isArray(u)?u:r}})}var t=e.fullCalendar,n=t.applyAll;t.sourceNormalizers.push(function(e){if(e.dataType=="gcal"||e.dataType===undefined&&(e.url||"").match(/^(http|https):\/\/www.google.com\/calendar\/feeds\//))e.dataType="gcal",e.editable===undefined&&(e.editable=!1)}),t.sourceFetchers.push(function(e,t,n,i){if(e.dataType=="gcal")return r(e,t,n,i)}),t.gcalFeed=function(t,n){return e.extend({},n,{url:t,dataType:"gcal"})}});

@@ -1,0 +1,1 @@
+define(["app/models/user"],function(e){module("Model"),asyncTest("fetch user",2,function(){var t=new e({id:localStorage.getItem("test.user.id")}),n={error:function(){ok(!1),start()},success:function(e){ok(typeof e=="object","json response is an object"),ok(typeof e.attributes._id=="object","user id is a mongo id object"),start()}};t.fetch(n)})});

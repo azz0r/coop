@@ -84,6 +84,9 @@ $less   = array('mixins', 'style', 'pageDesigns', 'quickview', 'loading');
         </footer>
     </div>
 </div>
-<script data-main="js/main" src="js/libs/require/require.js"></script>
-</body>
+<?php if ($env == "production") { ?>
+    <script data-main="js/build/main" src="js/libs/require/require.js"></script>
+<?php } else { ?>
+    <script data-main="js/main" src="js/libs/require/require.js"></script>
+<?php } ?></body>
 </html>

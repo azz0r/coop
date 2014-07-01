@@ -1,0 +1,1 @@
+define(["marionette","text!app/templates/layout/sidebar.html"],function(e,t,n,r){return e.ItemView.extend({template:t,serializeData:function(){return{user:localStorage.getObject("user")}},onRender:function(){var e=this;MyApp.vent.on("signIn:successful",function(){e.render()}),MyApp.vent.on("signOut:successful",function(){e.render()})}})});

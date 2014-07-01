@@ -1,0 +1,1 @@
+define(["marionette","text!app/templates/partials/success.html"],function(e,t){return Backbone.Marionette.ItemView.extend({template:t,initialize:function(e){this.message=_.has(e,"message")?e.message:"no message set"},serializeData:function(){return{message:this.message}}})});

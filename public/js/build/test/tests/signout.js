@@ -1,0 +1,1 @@
+define([],function(){module("Account"),asyncTest("signout",1,function(){$.ajax({type:"GET",url:"signout",async:!1}).complete(function(e){ok(JSON.parse(e.responseText),"response isnt true?"),start()})})});
