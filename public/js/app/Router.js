@@ -1,27 +1,37 @@
 define(['marionette', 'app/Controller'], function(marionette, Controller) {
-  'use strict'
-  return marionette.AppRouter.extend({
-    appRoutes: {
-      '': 'landing',
-      landing: 'landing',
-      debug: 'debug',
+    'use strict'
+    return marionette.AppRouter.extend({
+        appRoutes: {
+            '': 'landing',
 
-      support: 'support',
-      FAQ: 'FAQ',
-      aboutUs: 'aboutUs',
+            landing: 'landing',
 
-      signIn: 'signIn',
-      updatePassword: 'updatePassword',
-      signOut: 'signOut',
+            debug: 'debug',
 
-      messages: 'messages',
-      profiles: 'profiles',
-      updateProfile: 'updateProfile',
+            support: 'support',
 
-      /* images */
-      images: 'images',
-      uploadImage: 'uploadImage'
-    },
-    controller: Controller
-  })
+            FAQ: 'FAQ',
+
+            aboutUs: 'aboutUs',
+
+            signIn: 'signIn',
+
+            updatePassword: 'updatePassword',
+
+            signOut: 'signOut',
+
+            messages: 'messages',
+
+            profiles: 'profiles',
+
+            'profile/:id': 'profile',
+
+            updateProfile: 'updateProfile',
+
+            images: 'images',
+
+            uploadImage: 'uploadImage'
+        },
+        controller: Controller
+    })
 })

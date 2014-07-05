@@ -1,0 +1,65 @@
+<script type="text/template" id="profilesViewTemplate">
+    <div class="col-md-5">
+        <h2><%=model.user.username%></h2>
+        <ul>
+            <li>
+                <%=model.profile.age%>
+            </li>
+            <% if (model.profile.is_a != "-") { %>
+            <li>They are: <%=options.is_a[model.profile.is_a]%></li>
+            <% } %>
+            <% if (model.profile.is_for != "-") { %>
+            <li>Looking for: <%=options.is_for[model.profile.is_for]%></li>
+            <% } %>
+            <% if (model.profile.height != "-") { %>
+            <li>Height: <%=options.height[model.profile.height]%></li>
+            <% } %>
+            <% if (model.profile.sex != "-") { %>
+            <li>Sex: <%=options.sex[model.profile.sex]%></li>
+            <% } %>
+            <% if (model.profile.education != "-") { %>
+            <li>Education: <%=options.education[model.profile.education]%></li>
+            <% } %>
+            <% if (model.profile.religion != "-") { %>
+            <li>Religion: <%=options.religion[model.profile.religion]%></li>
+            <% } %>
+            <% if (model.profile.star_sign != "-") { %>
+            <li>Star Sign: <%=options.star_sign[model.profile.star_sign]%></li>
+            <% } %>
+            <% if (model.profile.income != "-") { %>
+            <li>Financial status: <%=options.income[model.profile.income]%></li>
+            <% } %>
+            <% if (model.profile.occupation != "-") { %>
+            <li>Occuption: <%=options.occupation[model.profile.occupation]%></li>
+            <% } %>
+            <% if (model.profile.eye_colour != "-") { %>
+            <li>Natural Eye Colour: <%=options.eye_colour[model.profile.eye_colour]%></li>
+            <% } %>
+            <% if (model.profile.hair_colour != "-") { %>
+            <li>Natural Hair Colour: <%=options.hair_colour[model.profile.hair_colour]%></li>
+            <% } %>
+            <% if (model.profile.body != "-") { %>
+            <li>Body Type: <%=options.body[model.profile.body]%></li>
+            <% } %>
+            <% if (model.profile.ethnicity != "-") { %>
+            <li>Ethnic Origins: <%=options.ethnicity[model.profile.ethnicity]%></li>
+            <% } %>
+            <% if (model.profile.screening != "-") { %>
+            <li>Willing to take a health screening: <%=options.screening[model.profile.screening]%></li>
+            <% } %>
+            <% if (model.profile.smoke != "-") { %>
+            <li>Smoke: <%=options.smoke[model.profile.smoke]%></li>
+            <% } %>
+            <% if (model.profile.drink != "-") { %>
+            <li>Ever had a problem with drink: <%=options.drink[model.profile.drink]%></li>
+            <% } %>
+        </ul>
+    </div>
+    <div class="col-md-7">
+        <% _.each(model.images, function(image, key) { %>
+        <div class="image col-xs-6 col-sm-6" data-id="<%=image._id.$id%>">
+            <img src="<%=image.urls.thumb%>" class="thumbnail" />
+        </div>
+        <% }) %>
+    </div>
+</script>

@@ -1,86 +1,92 @@
 define(["jquery","app/helper/user", "app/helper/underscore"],
-  function($, userCheck, templateHelper) {
-    "use strict"
-    return {
-      landing: function() {
-        return require(["app/views/landing/index"], function(View) {
-          return MyApp.content.show(new View())
-        })
-      },
-      debug: function() {
-        userCheck.authenticate("app/views/debug");
-      },
+    function($, userCheck, templateHelper) {
+        "use strict"
+        return {
 
-      // support
-      support: function() {
-        return require(["app/views/general/support"], function(View) {
-          return MyApp.content.show(new View())
-        })
-      },
-      aboutUs: function() {
-        return require(["app/views/general/aboutUs"], function(View) {
-          return MyApp.content.show(new View())
-        })
-      },
-      FAQ: function() {
-        return require(["app/views/general/FAQ"], function(View) {
-          return MyApp.content.show(new View())
-        })
-      },
+            landing: function() {
+                return require(["app/views/landing/index"], function(View) {
+                    return MyApp.content.show(new View())
+                })
+            },
 
+            debug: function() {
+                userCheck.authenticate("app/views/debug");
+            },
 
-      messages: function() {
-        return require(["app/views/messages/index"], function(View) {
-          return MyApp.content.show(new View())
-        })
-      },
-      profiles: function() {
-        return require(["app/views/profiles/index"], function(View) {
-          return MyApp.content.show(new View())
-        })
-      },
-      updateProfile: function() {
-        return require(["app/views/profiles/form"], function(View) {
-          return MyApp.content.show(new View())
-        })
-      },
+            // support
+            support: function() {
+                return require(["app/views/general/support"], function(View) {
+                    return MyApp.content.show(new View())
+                })
+            },
 
+            aboutUs: function() {
+                return require(["app/views/general/aboutUs"], function(View) {
+                    return MyApp.content.show(new View())
+                })
+            },
 
-      // images
-      images: function() {
-        userCheck.authenticate("app/views/images/index");
-      },
-      uploadImage: function() {
-        userCheck.authenticate("app/views/images/upload");
-      },
+            FAQ: function() {
+                return require(["app/views/general/FAQ"], function(View) {
+                    return MyApp.content.show(new View())
+                })
+            },
 
+            messages: function() {
+                userCheck.authenticate("app/views/messages/index");
+            },
 
-      signIn: function() {
-        var user = localStorage.getObject('user');
-        if (user !=undefined && user != null) {
-          userCheck.authenticate("app/views/hive/landing");
-        } else {
-          return require(["app/views/users/signin"], function(View) {
-            return MyApp.content.show(new View())
-          })
+            profiles: function() {
+                return require(["app/views/profiles/index"], function(View) {
+                    return MyApp.content.show(new View())
+                })
+            },
+
+            profile: function(id) {
+                userCheck.authenticate("app/views/profiles/view", {
+                    id: id
+                });
+            },
+
+            updateProfile: function() {
+                userCheck.authenticate("app/views/profiles/form");
+            },
+
+            images: function() {
+                userCheck.authenticate("app/views/images/index");
+            },
+
+            uploadImage: function() {
+                userCheck.authenticate("app/views/images/upload");
+            },
+
+            signIn: function() {
+                var user = localStorage.getObject('user');
+                if (user !=undefined && user != null) {
+                    userCheck.authenticate("app/views/hive/landing");
+                } else {
+                    return require(["app/views/users/signin"], function(View) {
+                        return MyApp.content.show(new View())
+                    })
+                }
+            },
+
+            signOut: function() {
+                localStorage.clear();
+
+                $.ajax({
+                    type: "DELETE",
+                    url: "signout",
+                    data: {}
+                }).complete(function(data) {
+                    window.location.hash = '';
+                    return location.reload(true);
+                })
+            },
+
+            updatePassword: function() {
+                userCheck.authenticate("app/views/users/password");
+            }
+
         }
-      },
-      signOut: function() {
-        localStorage.clear();
-
-        $.ajax({
-          type: "DELETE",
-          url: "signout",
-          data: {}
-        }).complete(function(data) {
-          window.location.hash = '';
-          return location.reload(true);
-        })
-      },
-      updatePassword: function() {
-        userCheck.authenticate("app/views/users/password");
-      }
-
-
-    }
-  })
+    })
