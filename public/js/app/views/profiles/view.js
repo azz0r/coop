@@ -18,8 +18,13 @@ define([
 
             onClickImage: function(ev) {
 
+                // prevent any link default
                 ev.preventDefault();
+
+                // get image id via the element
                 var imageId = $(ev.currentTarget).data('id');
+
+                // get image object from the array of images via the id
                 var image = _.where(this.model.get('images'), {id: imageId});
 
                 // create an instance of a image view

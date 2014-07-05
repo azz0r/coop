@@ -42,11 +42,24 @@ define(["jquery","app/helper/user", "app/helper/underscore"],
                 })
             },
 
+            articles: function(id) {
+                return require(["app/views/articles/collection"], function(View) {
+                    return MyApp.content.show(new View())
+                })
+            },
+
+            article: function(slug) {
+                return require(["app/views/articles/item"], function(View) {
+                    return MyApp.content.show(new View(slug))
+                })
+            },
+
             profile: function(id) {
                 userCheck.authenticate("app/views/profiles/view", {
                     id: id
                 });
             },
+
 
             updateProfile: function() {
                 userCheck.authenticate("app/views/profiles/form");

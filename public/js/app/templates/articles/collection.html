@@ -1,0 +1,11 @@
+<script type="text/template" id="articlesCollectionTemplate">
+    <ul>
+        <% _.each(collection, function(article, key) { %>
+            <li>
+                <a href="#article/<%=article.id%>">
+                    <%=article.title%>
+                </a>
+            </li>
+        <% }) %>
+    </ul>
+</script>

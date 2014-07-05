@@ -22,6 +22,10 @@ define(['marionette', 'app/Controller'], function(marionette, Controller) {
 
             messages: 'messages',
 
+            articles: 'articles',
+
+            "article/:slug": 'article',
+
             profiles: 'profiles',
 
             'profile/:id': 'profile',
