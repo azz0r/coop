@@ -3,7 +3,7 @@ define([
     "text!app/templates/profiles/view.html",
     "app/models/profile",
     "app/models/profile/full",
-    "app/views/images/quickview"
+    "app/views/profiles/view/image"
 ],
 
     function(Marionette, Template, Model, ModelFetch, ItemQuickview) {
@@ -19,15 +19,11 @@ define([
             onClickImage: function(ev) {
 
                 ev.preventDefault();
-
                 var imageId = $(ev.currentTarget).data('id');
-
                 var image = _.where(this.model.get('images'), {id: imageId});
 
-                console.log(image[0]);
-
                 // create an instance of a image view
-                $.quickview({className: 'image', view: new ItemQuickview({model: image[0]})});
+                $.quickview({className: 'image', view: new ItemQuickview(image[0])});
             },
 
             initialize: function(options) {
