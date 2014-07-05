@@ -1,5 +1,57 @@
 <script type="text/template" id="profilesItemTemplate">
     <div class="col-md-6">
-        Item
+        <a href="#profile/<%=model._id.$id%>"><%=model.name%></a>
+        <ul>
+            <% if (model.is_a != "-") { %>
+                <li>They are: <%=options.is_a[model.is_a]%></li>
+            <% } %>
+            <% if (model.is_for != "-") { %>
+            <li>Looking for: <%=options.is_for[model.is_for]%></li>
+            <% } %>
+            <% if (model.height != "-") { %>
+            <li>Height: <%=options.height[model.height]%></li>
+            <% } %>
+            <% if (model.sex != "-") { %>
+            <li>Sex: <%=options.sex[model.sex]%></li>
+            <% } %>
+            <% if (model.education != "-") { %>
+            <li>Education: <%=options.education[model.education]%></li>
+            <% } %>
+            <% if (model.religion != "-") { %>
+            <li>Religion: <%=options.religion[model.religion]%></li>
+            <% } %>
+            <% if (model.star_sign != "-") { %>
+            <li>Star Sign: <%=options.star_sign[model.star_sign]%></li>
+            <% } %>
+            <% if (model.income != "-") { %>
+            <li>Financial status: <%=options.income[model.income]%></li>
+            <% } %>
+            <% if (model.occupation != "-") { %>
+            <li>Occuption: <%=options.occupation[model.occupation]%></li>
+            <% } %>
+            <% if (model.eye_colour != "-") { %>
+            <li>Natural Eye Colour: <%=options.eye_colour[model.eye_colour]%></li>
+            <% } %>
+            <% if (model.hair_colour != "-") { %>
+            <li>Natural Hair Colour: <%=options.hair_colour[model.hair_colour]%></li>
+            <% } %>
+            <% if (model.body != "-") { %>
+            <li>Body Type: <%=options.body[model.body]%></li>
+            <% } %>
+            <% if (model.ethnicity != "-") { %>
+            <li>Ethnic Origins: <%=options.ethnicity[model.ethnicity]%></li>
+            <% } %>
+            <% if (model.screening != "-") { %>
+            <li>Willing to take a health screening: <%=options.screening[model.screening]%></li>
+            <% } %>
+            <% if (model.smoke != "-") { %>
+            <li>Smoke: <%=options.smoke[model.smoke]%></li>
+            <% } %>
+            <% if (model.drink != "-") { %>
+            <li>Ever had a problem with drink: <%=options.drink[model.drink]%></li>
+            <% } %>
+        </ul>
     </div>
 </script>
+var is_a = [], is_for = [], height = [], sex = [], education = [], religion = [], star_sign = [],
+income = [], hair_colour = [], eye_colour = [], body = [], ethnicity = [], smoke = [], screening = [], drink = [];

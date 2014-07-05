@@ -46,9 +46,9 @@ text!libs/quickview/quickview.html
 libs/quickview/quickview.js
 libs/bootstrap/bootstrap.js
 main.js
+app/helper/url.js
 text!app/templates/messages/index.html
 text!app/templates/messages/collection.html
-app/helper/url.js
 app/collections/base.js
 app/models/base.js
 app/models/message.js

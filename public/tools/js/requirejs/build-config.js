@@ -46,6 +46,7 @@
     {
       name: "main",
       include: [
+        "app/helper/url",
         "app/views/messages/index",
         "app/views/images/index",
         "app/views/profiles/index"
